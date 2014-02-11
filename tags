@@ -1,0 +1,330 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ADD_TASK_DIALOG_H	AddTaskDialog.h	2;"	d	line:2	language:C++
+AddTaskDialog	AddTaskDialog.cpp	/^AddTaskDialog::AddTaskDialog(TaskRecorder *task,QWidget *parent): QDialog(parent), recorder(task)$/;"	f	line:3	language:C++	class:AddTaskDialog	signature:(TaskRecorder *task,QWidget *parent)
+AddTaskDialog	AddTaskDialog.h	/^    AddTaskDialog(TaskRecorder *recorder, QWidget *parent = 0);$/;"	p	line:27	language:C++	class:AddTaskDialog	access:public	signature:(TaskRecorder *recorder, QWidget *parent = 0)
+AddTaskDialog	AddTaskDialog.h	/^class AddTaskDialog : public QDialog$/;"	c	line:23	language:C++	inherits:QDialog
+AddTaskDialog::AddTaskDialog	AddTaskDialog.cpp	/^AddTaskDialog::AddTaskDialog(TaskRecorder *task,QWidget *parent): QDialog(parent), recorder(task)$/;"	f	line:3	language:C++	class:AddTaskDialog	signature:(TaskRecorder *task,QWidget *parent)
+AddTaskDialog::AddTaskDialog	AddTaskDialog.h	/^    AddTaskDialog(TaskRecorder *recorder, QWidget *parent = 0);$/;"	p	line:27	language:C++	class:AddTaskDialog	access:public	signature:(TaskRecorder *recorder, QWidget *parent = 0)
+AddTaskDialog::button_cancel	AddTaskDialog.h	/^    QPushButton *button_cancel;$/;"	m	line:49	language:C++	class:AddTaskDialog	access:private
+AddTaskDialog::button_okay	AddTaskDialog.h	/^    QPushButton *button_okay;$/;"	m	line:48	language:C++	class:AddTaskDialog	access:private
+AddTaskDialog::button_okay_clicked	AddTaskDialog.cpp	/^void AddTaskDialog::button_okay_clicked() $/;"	f	line:79	language:C++	class:AddTaskDialog	signature:()
+AddTaskDialog::button_okay_clicked	AddTaskDialog.h	/^    void button_okay_clicked();$/;"	p	line:33	language:C++	class:AddTaskDialog	access:public	signature:()
+AddTaskDialog::content	AddTaskDialog.h	/^    QTextEdit *content;$/;"	m	line:44	language:C++	class:AddTaskDialog	access:private
+AddTaskDialog::date	AddTaskDialog.h	/^    QCalendarWidget *date;$/;"	m	line:45	language:C++	class:AddTaskDialog	access:private
+AddTaskDialog::getStaticMetaObject	moc_AddTaskDialog.cpp	/^const QMetaObject &AddTaskDialog::getStaticMetaObject() { return staticMetaObject; }$/;"	f	line:66	language:C++	class:AddTaskDialog	signature:()
+AddTaskDialog::grid_layout	AddTaskDialog.h	/^    QGridLayout *grid_layout;$/;"	m	line:52	language:C++	class:AddTaskDialog	access:private
+AddTaskDialog::hbox_layout	AddTaskDialog.h	/^    QHBoxLayout *hbox_layout;$/;"	m	line:53	language:C++	class:AddTaskDialog	access:private
+AddTaskDialog::initWidgets	AddTaskDialog.cpp	/^void AddTaskDialog::initWidgets()$/;"	f	line:44	language:C++	class:AddTaskDialog	signature:()
+AddTaskDialog::initWidgets	AddTaskDialog.h	/^    void initWidgets();$/;"	p	line:30	language:C++	class:AddTaskDialog	access:public	signature:()
+AddTaskDialog::label_date	AddTaskDialog.h	/^    QLabel *label_date;$/;"	m	line:41	language:C++	class:AddTaskDialog	access:private
+AddTaskDialog::label_time	AddTaskDialog.h	/^    QLabel *label_time;$/;"	m	line:42	language:C++	class:AddTaskDialog	access:private
+AddTaskDialog::label_title	AddTaskDialog.h	/^    QLabel *label_title;$/;"	m	line:40	language:C++	class:AddTaskDialog	access:private
+AddTaskDialog::main_layout	AddTaskDialog.h	/^    QGridLayout *main_layout;$/;"	m	line:51	language:C++	class:AddTaskDialog	access:private
+AddTaskDialog::metaObject	moc_AddTaskDialog.cpp	/^const QMetaObject *AddTaskDialog::metaObject() const$/;"	f	line:69	language:C++	class:AddTaskDialog	signature:() const
+AddTaskDialog::qt_metacall	moc_AddTaskDialog.cpp	/^int AddTaskDialog::qt_metacall(QMetaObject::Call _c, int _id, void **_a)$/;"	f	line:82	language:C++	class:AddTaskDialog	signature:(QMetaObject::Call _c, int _id, void **_a)
+AddTaskDialog::qt_metacast	moc_AddTaskDialog.cpp	/^void *AddTaskDialog::qt_metacast(const char *_clname)$/;"	f	line:74	language:C++	class:AddTaskDialog	signature:(const char *_clname)
+AddTaskDialog::qt_static_metacall	moc_AddTaskDialog.cpp	/^void AddTaskDialog::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)$/;"	f	line:43	language:C++	class:AddTaskDialog	signature:(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+AddTaskDialog::recorder	AddTaskDialog.h	/^    TaskRecorder *recorder;$/;"	m	line:37	language:C++	class:AddTaskDialog	access:private
+AddTaskDialog::staticMetaObject	moc_AddTaskDialog.cpp	/^const QMetaObject AddTaskDialog::staticMetaObject = {$/;"	m	line:60	language:C++	class:AddTaskDialog	file:
+AddTaskDialog::staticMetaObjectExtraData	moc_AddTaskDialog.cpp	/^const QMetaObjectExtraData AddTaskDialog::staticMetaObjectExtraData = {$/;"	m	line:56	language:C++	class:AddTaskDialog	file:
+AddTaskDialog::time	AddTaskDialog.h	/^    QDateTimeEdit *time;$/;"	m	line:46	language:C++	class:AddTaskDialog	access:private
+AddTaskDialog::~AddTaskDialog	AddTaskDialog.cpp	/^AddTaskDialog::~AddTaskDialog()$/;"	f	line:25	language:C++	class:AddTaskDialog	signature:()
+AddTaskDialog::~AddTaskDialog	AddTaskDialog.h	/^    virtual ~AddTaskDialog();$/;"	p	line:28	language:C++	class:AddTaskDialog	access:public	signature:()
+DESKTOP_SPRITE	DesktopSprite.h	2;"	d	line:2	language:C++
+DesktopSprite	DesktopSprite.cpp	/^DesktopSprite::DesktopSprite(QApplication *app) : QWidget(0), app_handle(app), pressed(false)$/;"	f	line:3	language:C++	class:DesktopSprite	signature:(QApplication *app)
+DesktopSprite	DesktopSprite.h	/^        DesktopSprite(QApplication *app);$/;"	p	line:29	language:C++	class:DesktopSprite	access:public	signature:(QApplication *app)
+DesktopSprite	DesktopSprite.h	/^class DesktopSprite : public QWidget$/;"	c	line:24	language:C++	inherits:QWidget
+DesktopSprite::DesktopSprite	DesktopSprite.cpp	/^DesktopSprite::DesktopSprite(QApplication *app) : QWidget(0), app_handle(app), pressed(false)$/;"	f	line:3	language:C++	class:DesktopSprite	signature:(QApplication *app)
+DesktopSprite::DesktopSprite	DesktopSprite.h	/^        DesktopSprite(QApplication *app);$/;"	p	line:29	language:C++	class:DesktopSprite	access:public	signature:(QApplication *app)
+DesktopSprite::addTask	DesktopSprite.cpp	/^void DesktopSprite::addTask()$/;"	f	line:113	language:C++	class:DesktopSprite	signature:()
+DesktopSprite::addTask	DesktopSprite.h	/^        void addTask();$/;"	p	line:48	language:C++	class:DesktopSprite	access:public	signature:()
+DesktopSprite::add_task	DesktopSprite.h	/^        QAction *add_task;$/;"	m	line:58	language:C++	class:DesktopSprite	access:private
+DesktopSprite::app_handle	DesktopSprite.h	/^        QApplication *app_handle;$/;"	m	line:54	language:C++	class:DesktopSprite	access:private
+DesktopSprite::browseTasks	DesktopSprite.cpp	/^void DesktopSprite::browseTasks()$/;"	f	line:119	language:C++	class:DesktopSprite	signature:()
+DesktopSprite::browseTasks	DesktopSprite.h	/^        void browseTasks();$/;"	p	line:49	language:C++	class:DesktopSprite	access:public	signature:()
+DesktopSprite::browse_tasks	DesktopSprite.h	/^        QAction *browse_tasks;$/;"	m	line:59	language:C++	class:DesktopSprite	access:private
+DesktopSprite::exit_all	DesktopSprite.h	/^        QAction *exit_all;$/;"	m	line:57	language:C++	class:DesktopSprite	access:private
+DesktopSprite::getStaticMetaObject	moc_DesktopSprite.cpp	/^const QMetaObject &DesktopSprite::getStaticMetaObject() { return staticMetaObject; }$/;"	f	line:73	language:C++	class:DesktopSprite	signature:()
+DesktopSprite::iconActivated	DesktopSprite.cpp	/^void DesktopSprite::iconActivated(QSystemTrayIcon::ActivationReason reason) $/;"	f	line:97	language:C++	class:DesktopSprite	signature:(QSystemTrayIcon::ActivationReason reason)
+DesktopSprite::iconActivated	DesktopSprite.h	/^        void iconActivated(QSystemTrayIcon::ActivationReason);$/;"	p	line:46	language:C++	class:DesktopSprite	access:public	signature:(QSystemTrayIcon::ActivationReason)
+DesktopSprite::image	DesktopSprite.h	/^        QPixmap image; $/;"	m	line:53	language:C++	class:DesktopSprite	access:private
+DesktopSprite::initMenu	DesktopSprite.cpp	/^void DesktopSprite::initMenu()$/;"	f	line:128	language:C++	class:DesktopSprite	signature:()
+DesktopSprite::initMenu	DesktopSprite.h	/^        void initMenu();$/;"	p	line:42	language:C++	class:DesktopSprite	access:private	signature:()
+DesktopSprite::keyReleaseEvent	DesktopSprite.cpp	/^void DesktopSprite::keyReleaseEvent(QKeyEvent * event) $/;"	f	line:160	language:C++	class:DesktopSprite	signature:(QKeyEvent * event)
+DesktopSprite::keyReleaseEvent	DesktopSprite.h	/^        void keyReleaseEvent(QKeyEvent * event);$/;"	p	line:39	language:C++	class:DesktopSprite	access:protected	signature:(QKeyEvent * event)
+DesktopSprite::metaObject	moc_DesktopSprite.cpp	/^const QMetaObject *DesktopSprite::metaObject() const$/;"	f	line:76	language:C++	class:DesktopSprite	signature:() const
+DesktopSprite::mouseMoveEvent	DesktopSprite.cpp	/^void DesktopSprite::mouseMoveEvent(QMouseEvent * event)$/;"	f	line:138	language:C++	class:DesktopSprite	signature:(QMouseEvent * event)
+DesktopSprite::mouseMoveEvent	DesktopSprite.h	/^        void mouseMoveEvent(QMouseEvent * event);$/;"	p	line:36	language:C++	class:DesktopSprite	access:protected	signature:(QMouseEvent * event)
+DesktopSprite::mousePressEvent	DesktopSprite.cpp	/^void DesktopSprite::mousePressEvent(QMouseEvent * event)$/;"	f	line:148	language:C++	class:DesktopSprite	signature:(QMouseEvent * event)
+DesktopSprite::mousePressEvent	DesktopSprite.h	/^        void mousePressEvent(QMouseEvent * event);$/;"	p	line:37	language:C++	class:DesktopSprite	access:protected	signature:(QMouseEvent * event)
+DesktopSprite::mouseReleaseEvent	DesktopSprite.cpp	/^void DesktopSprite::mouseReleaseEvent(QMouseEvent *)$/;"	f	line:154	language:C++	class:DesktopSprite	signature:(QMouseEvent *)
+DesktopSprite::mouseReleaseEvent	DesktopSprite.h	/^        void mouseReleaseEvent(QMouseEvent * event);$/;"	p	line:38	language:C++	class:DesktopSprite	access:protected	signature:(QMouseEvent * event)
+DesktopSprite::paintEvent	DesktopSprite.cpp	/^void DesktopSprite::paintEvent(QPaintEvent *)$/;"	f	line:81	language:C++	class:DesktopSprite	signature:(QPaintEvent *)
+DesktopSprite::paintEvent	DesktopSprite.h	/^        void paintEvent(QPaintEvent *event);$/;"	p	line:33	language:C++	class:DesktopSprite	access:public	signature:(QPaintEvent *event)
+DesktopSprite::pressed	DesktopSprite.h	/^        bool pressed;$/;"	m	line:62	language:C++	class:DesktopSprite	access:private
+DesktopSprite::prevPt	DesktopSprite.h	/^        QPoint prevPt;$/;"	m	line:61	language:C++	class:DesktopSprite	access:private
+DesktopSprite::qMenu	DesktopSprite.h	/^        QMenu *qMenu;$/;"	m	line:52	language:C++	class:DesktopSprite	access:private
+DesktopSprite::qt_metacall	moc_DesktopSprite.cpp	/^int DesktopSprite::qt_metacall(QMetaObject::Call _c, int _id, void **_a)$/;"	f	line:89	language:C++	class:DesktopSprite	signature:(QMetaObject::Call _c, int _id, void **_a)
+DesktopSprite::qt_metacast	moc_DesktopSprite.cpp	/^void *DesktopSprite::qt_metacast(const char *_clname)$/;"	f	line:81	language:C++	class:DesktopSprite	signature:(const char *_clname)
+DesktopSprite::qt_static_metacall	moc_DesktopSprite.cpp	/^void DesktopSprite::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)$/;"	f	line:48	language:C++	class:DesktopSprite	signature:(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+DesktopSprite::recorder	DesktopSprite.h	/^        TaskRecorder *recorder;$/;"	m	line:67	language:C++	class:DesktopSprite	access:private
+DesktopSprite::showMouseRightButtonMenu	DesktopSprite.cpp	/^void DesktopSprite::showMouseRightButtonMenu(const QPoint &)$/;"	f	line:91	language:C++	class:DesktopSprite	signature:(const QPoint &)
+DesktopSprite::showMouseRightButtonMenu	DesktopSprite.h	/^        void showMouseRightButtonMenu(const QPoint&);$/;"	p	line:45	language:C++	class:DesktopSprite	access:public	signature:(const QPoint&)
+DesktopSprite::staticMetaObject	moc_DesktopSprite.cpp	/^const QMetaObject DesktopSprite::staticMetaObject = {$/;"	m	line:67	language:C++	class:DesktopSprite	file:
+DesktopSprite::staticMetaObjectExtraData	moc_DesktopSprite.cpp	/^const QMetaObjectExtraData DesktopSprite::staticMetaObjectExtraData = {$/;"	m	line:63	language:C++	class:DesktopSprite	file:
+DesktopSprite::timer	DesktopSprite.h	/^        QTimer *timer;$/;"	m	line:64	language:C++	class:DesktopSprite	access:private
+DesktopSprite::tray	DesktopSprite.h	/^        QSystemTrayIcon *tray;$/;"	m	line:65	language:C++	class:DesktopSprite	access:private
+DesktopSprite::~DesktopSprite	DesktopSprite.cpp	/^DesktopSprite::~DesktopSprite()$/;"	f	line:67	language:C++	class:DesktopSprite	signature:()
+DesktopSprite::~DesktopSprite	DesktopSprite.h	/^        virtual ~DesktopSprite();$/;"	p	line:30	language:C++	class:DesktopSprite	access:public	signature:()
+QMessageBox::warning	AddTaskDialog.cpp	/^        QMessageBox::warning(this, QObject::tr("Task Manager"), QObject::tr("Please enter the event description!"));$/;"	p	line:92	language:C++	class:QMessageBox	file:	signature:(this, QObject::tr(Ó), QObject::tr(Ó))
+QObject::connect	AddTaskDialog.cpp	/^    QObject::connect(button_cancel, SIGNAL(clicked()), this, SLOT(close()));$/;"	p	line:17	language:C++	class:QObject	file:	signature:(button_cancel, SIGNAL(clicked()), this, SLOT(close()))
+QObject::connect	AddTaskDialog.cpp	/^    QObject::connect(button_okay, SIGNAL(clicked()), this, SLOT(button_okay_clicked()));$/;"	p	line:16	language:C++	class:QObject	file:	signature:(button_okay, SIGNAL(clicked()), this, SLOT(button_okay_clicked()))
+QObject::connect	AddTaskDialog.cpp	/^    QObject::connect(date, SIGNAL(clicked(const QDate &)), time, SLOT(setDate(const QDate &)));$/;"	p	line:20	language:C++	class:QObject	file:	signature:(date, SIGNAL(clicked(const QDate &)), time, SLOT(setDate(const QDate &)))
+QObject::connect	AddTaskDialog.cpp	/^    QObject::connect(time, SIGNAL(dateChanged(const QDate &)), date, SLOT(setSelectedDate(const QDate &)));$/;"	p	line:19	language:C++	class:QObject	file:	signature:(time, SIGNAL(dateChanged(const QDate &)), date, SLOT(setSelectedDate(const QDate &)))
+QObject::connect	DesktopSprite.cpp	/^    QObject::connect(add_task, SIGNAL(triggered()), this, SLOT(addTask()));$/;"	p	line:21	language:C++	class:QObject	file:	signature:(add_task, SIGNAL(triggered()), this, SLOT(addTask()))
+QObject::connect	DesktopSprite.cpp	/^    QObject::connect(browse_tasks, SIGNAL(triggered()), this, SLOT(browseTasks()));$/;"	p	line:22	language:C++	class:QObject	file:	signature:(browse_tasks, SIGNAL(triggered()), this, SLOT(browseTasks()))
+QObject::connect	DesktopSprite.cpp	/^    QObject::connect(exit_all, SIGNAL(triggered()), app_handle, SLOT(quit()));$/;"	p	line:20	language:C++	class:QObject	file:	signature:(exit_all, SIGNAL(triggered()), app_handle, SLOT(quit()))
+QObject::connect	DesktopSprite.cpp	/^    QObject::connect(this, SIGNAL(customContextMenuRequested(const QPoint&)), this, SLOT(showMouseRightButtonMenu(const QPoint&)));$/;"	p	line:29	language:C++	class:QObject	file:	signature:(this, SIGNAL(customContextMenuRequested(const QPoint&)), this, SLOT(showMouseRightButtonMenu(const QPoint&)))
+QPoint	AddTaskDialog.cpp	/^    this->move(QPoint(_size.width() \/ 2, _size.height() \/ 2));$/;"	p	line:11	language:C++	file:	signature:(_size.width() / 2, _size.height() / 2)
+QPoint	DesktopSprite.cpp	/^    this->move(QPoint(size.width(), size.height()));$/;"	p	line:47	language:C++	file:	signature:(size.width(), size.height())
+QPoint	TasksBrowser.cpp	/^    this->move(QPoint(_size.width() \/ 2, _size.height() \/ 2));$/;"	p	line:11	language:C++	file:	signature:(_size.width() / 2, _size.height() / 2)
+QTextCodec::setCodecForCStrings	main.cpp	/^    QTextCodec::setCodecForCStrings(codec);  $/;"	p	line:16	language:C++	class:QTextCodec	file:	signature:(codec)
+QTextCodec::setCodecForLocale	main.cpp	/^    QTextCodec::setCodecForLocale(codec);  $/;"	p	line:15	language:C++	class:QTextCodec	file:	signature:(codec)
+QTextCodec::setCodecForTr	main.cpp	/^    QTextCodec::setCodecForTr(codec);  $/;"	p	line:17	language:C++	class:QTextCodec	file:	signature:(codec)
+TASKS_BRWOSER_H	TasksBrowser.h	2;"	d	line:2	language:C++
+TASK_RECORDER_H	TaskRecorder.h	2;"	d	line:2	language:C++
+TaskRecorder	TaskRecorder.cpp	/^TaskRecorder::TaskRecorder() $/;"	f	line:4	language:C++	class:TaskRecorder	signature:()
+TaskRecorder	TaskRecorder.h	/^    TaskRecorder();$/;"	p	line:13	language:C++	class:TaskRecorder	access:public	signature:()
+TaskRecorder	TaskRecorder.h	/^class TaskRecorder$/;"	c	line:10	language:C++
+TaskRecorder::TaskRecorder	TaskRecorder.cpp	/^TaskRecorder::TaskRecorder() $/;"	f	line:4	language:C++	class:TaskRecorder	signature:()
+TaskRecorder::TaskRecorder	TaskRecorder.h	/^    TaskRecorder();$/;"	p	line:13	language:C++	class:TaskRecorder	access:public	signature:()
+TaskRecorder::addNewTask	TaskRecorder.cpp	/^int TaskRecorder::addNewTask(QString &event, QDateTime &datetime)$/;"	f	line:42	language:C++	class:TaskRecorder	signature:(QString &event, QDateTime &datetime)
+TaskRecorder::addNewTask	TaskRecorder.h	/^    int addNewTask(QString &event, QDateTime &datetime);$/;"	p	line:17	language:C++	class:TaskRecorder	access:public	signature:(QString &event, QDateTime &datetime)
+TaskRecorder::dbconn	TaskRecorder.h	/^    QSqlDatabase dbconn;$/;"	m	line:21	language:C++	class:TaskRecorder	access:private
+TaskRecorder::initDatabase	TaskRecorder.cpp	/^int TaskRecorder::initDatabase()$/;"	f	line:34	language:C++	class:TaskRecorder	signature:()
+TaskRecorder::initDatabase	TaskRecorder.h	/^    int initDatabase();$/;"	p	line:16	language:C++	class:TaskRecorder	access:public	signature:()
+TaskRecorder::query	TaskRecorder.h	/^    QSqlQuery query;$/;"	m	line:22	language:C++	class:TaskRecorder	access:private
+TaskRecorder::removeTask	TaskRecorder.cpp	/^int TaskRecorder::removeTask(int id)$/;"	f	line:62	language:C++	class:TaskRecorder	signature:(int id)
+TaskRecorder::removeTask	TaskRecorder.h	/^    int removeTask(int id);$/;"	p	line:18	language:C++	class:TaskRecorder	access:public	signature:(int id)
+TaskRecorder::~TaskRecorder	TaskRecorder.cpp	/^TaskRecorder::~TaskRecorder()$/;"	f	line:29	language:C++	class:TaskRecorder	signature:()
+TaskRecorder::~TaskRecorder	TaskRecorder.h	/^    virtual ~TaskRecorder();$/;"	p	line:14	language:C++	class:TaskRecorder	access:public	signature:()
+TasksBrowser	TasksBrowser.cpp	/^TasksBrowser::TasksBrowser(TaskRecorder *task,QWidget *parent): QDialog(parent), recorder(task)$/;"	f	line:3	language:C++	class:TasksBrowser	signature:(TaskRecorder *task,QWidget *parent)
+TasksBrowser	TasksBrowser.h	/^    TasksBrowser(TaskRecorder *recorder, QWidget *parent = 0);$/;"	p	line:20	language:C++	class:TasksBrowser	access:public	signature:(TaskRecorder *recorder, QWidget *parent = 0)
+TasksBrowser	TasksBrowser.h	/^class TasksBrowser : public QDialog$/;"	c	line:16	language:C++	inherits:QDialog
+TasksBrowser::TasksBrowser	TasksBrowser.cpp	/^TasksBrowser::TasksBrowser(TaskRecorder *task,QWidget *parent): QDialog(parent), recorder(task)$/;"	f	line:3	language:C++	class:TasksBrowser	signature:(TaskRecorder *task,QWidget *parent)
+TasksBrowser::TasksBrowser	TasksBrowser.h	/^    TasksBrowser(TaskRecorder *recorder, QWidget *parent = 0);$/;"	p	line:20	language:C++	class:TasksBrowser	access:public	signature:(TaskRecorder *recorder, QWidget *parent = 0)
+TasksBrowser::button_add	TasksBrowser.h	/^    QPushButton *button_add;$/;"	m	line:36	language:C++	class:TasksBrowser	access:private
+TasksBrowser::button_delete	TasksBrowser.h	/^    QPushButton *button_delete;$/;"	m	line:35	language:C++	class:TasksBrowser	access:private
+TasksBrowser::button_delete_clicked	TasksBrowser.cpp	/^void TasksBrowser::button_delete_clicked() $/;"	f	line:85	language:C++	class:TasksBrowser	signature:()
+TasksBrowser::button_delete_clicked	TasksBrowser.h	/^    void button_delete_clicked();$/;"	p	line:26	language:C++	class:TasksBrowser	access:public	signature:()
+TasksBrowser::getStaticMetaObject	moc_TasksBrowser.cpp	/^const QMetaObject &TasksBrowser::getStaticMetaObject() { return staticMetaObject; }$/;"	f	line:66	language:C++	class:TasksBrowser	signature:()
+TasksBrowser::hbox	TasksBrowser.h	/^    QHBoxLayout *hbox;$/;"	m	line:39	language:C++	class:TasksBrowser	access:private
+TasksBrowser::initWidgets	TasksBrowser.cpp	/^void TasksBrowser::initWidgets()$/;"	f	line:28	language:C++	class:TasksBrowser	signature:()
+TasksBrowser::initWidgets	TasksBrowser.h	/^    void initWidgets();$/;"	p	line:23	language:C++	class:TasksBrowser	access:public	signature:()
+TasksBrowser::main_layout	TasksBrowser.h	/^    QGridLayout *main_layout;$/;"	m	line:38	language:C++	class:TasksBrowser	access:private
+TasksBrowser::metaObject	moc_TasksBrowser.cpp	/^const QMetaObject *TasksBrowser::metaObject() const$/;"	f	line:69	language:C++	class:TasksBrowser	signature:() const
+TasksBrowser::qt_metacall	moc_TasksBrowser.cpp	/^int TasksBrowser::qt_metacall(QMetaObject::Call _c, int _id, void **_a)$/;"	f	line:82	language:C++	class:TasksBrowser	signature:(QMetaObject::Call _c, int _id, void **_a)
+TasksBrowser::qt_metacast	moc_TasksBrowser.cpp	/^void *TasksBrowser::qt_metacast(const char *_clname)$/;"	f	line:74	language:C++	class:TasksBrowser	signature:(const char *_clname)
+TasksBrowser::qt_static_metacall	moc_TasksBrowser.cpp	/^void TasksBrowser::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)$/;"	f	line:43	language:C++	class:TasksBrowser	signature:(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+TasksBrowser::recorder	TasksBrowser.h	/^    TaskRecorder *recorder;$/;"	m	line:30	language:C++	class:TasksBrowser	access:private
+TasksBrowser::staticMetaObject	moc_TasksBrowser.cpp	/^const QMetaObject TasksBrowser::staticMetaObject = {$/;"	m	line:60	language:C++	class:TasksBrowser	file:
+TasksBrowser::staticMetaObjectExtraData	moc_TasksBrowser.cpp	/^const QMetaObjectExtraData TasksBrowser::staticMetaObjectExtraData = {$/;"	m	line:56	language:C++	class:TasksBrowser	file:
+TasksBrowser::table	TasksBrowser.h	/^    QTableWidget *table;$/;"	m	line:33	language:C++	class:TasksBrowser	access:private
+TasksBrowser::~TasksBrowser	TasksBrowser.cpp	/^TasksBrowser::~TasksBrowser() $/;"	f	line:17	language:C++	class:TasksBrowser	signature:()
+TasksBrowser::~TasksBrowser	TasksBrowser.h	/^    virtual ~TasksBrowser();$/;"	p	line:21	language:C++	class:TasksBrowser	access:public	signature:()
+_size	AddTaskDialog.cpp	/^    QSize _size = displaySize - size();$/;"	l	line:10	language:C++
+_size	TasksBrowser.cpp	/^    QSize _size = displaySize - size();$/;"	l	line:10	language:C++
+_t	moc_AddTaskDialog.cpp	/^        AddTaskDialog *_t = static_cast<AddTaskDialog *>(_o);$/;"	l	line:47	language:C++
+_t	moc_DesktopSprite.cpp	/^        DesktopSprite *_t = static_cast<DesktopSprite *>(_o);$/;"	l	line:52	language:C++
+_t	moc_DesktopSprite.cpp	/^        case 0: _t->showMouseRightButtonMenu((*reinterpret_cast< const QPoint(*)>(_a[1]))); break;$/;"	p	line:54	language:C++	file:	signature:(*reinterpret_cast< const QPoint(*)>(_a[1]))
+_t	moc_DesktopSprite.cpp	/^        case 1: _t->iconActivated((*reinterpret_cast< QSystemTrayIcon::ActivationReason(*)>(_a[1]))); break;$/;"	p	line:55	language:C++	file:	signature:(*reinterpret_cast< QSystemTrayIcon::ActivationReason(*)>(_a[1]))
+_t	moc_TasksBrowser.cpp	/^        TasksBrowser *_t = static_cast<TasksBrowser *>(_o);$/;"	l	line:47	language:C++
+addAction	DesktopSprite.cpp	/^    qMenu->addAction(add_task);$/;"	p	line:132	language:C++	file:	signature:(add_task)
+addAction	DesktopSprite.cpp	/^    qMenu->addAction(browse_tasks);$/;"	p	line:133	language:C++	file:	signature:(browse_tasks)
+addAction	DesktopSprite.cpp	/^    qMenu->addAction(exit_all);$/;"	p	line:134	language:C++	file:	signature:(exit_all)
+addLayout	AddTaskDialog.cpp	/^    main_layout->addLayout(grid_layout, 0, 0);$/;"	p	line:72	language:C++	file:	signature:(grid_layout, 0, 0)
+addLayout	AddTaskDialog.cpp	/^    main_layout->addLayout(hbox_layout, 1, 0);$/;"	p	line:73	language:C++	file:	signature:(hbox_layout, 1, 0)
+addLayout	TasksBrowser.cpp	/^    main_layout->addLayout(hbox, 1, 0);$/;"	p	line:78	language:C++	file:	signature:(hbox, 1, 0)
+addNewTask	AddTaskDialog.cpp	/^        recorder->addNewTask(event, time_stamp);$/;"	p	line:87	language:C++	file:	signature:(event, time_stamp)
+addNewTask	TaskRecorder.cpp	/^int TaskRecorder::addNewTask(QString &event, QDateTime &datetime)$/;"	f	line:42	language:C++	class:TaskRecorder	signature:(QString &event, QDateTime &datetime)
+addNewTask	TaskRecorder.h	/^    int addNewTask(QString &event, QDateTime &datetime);$/;"	p	line:17	language:C++	class:TaskRecorder	access:public	signature:(QString &event, QDateTime &datetime)
+addTask	DesktopSprite.cpp	/^void DesktopSprite::addTask()$/;"	f	line:113	language:C++	class:DesktopSprite	signature:()
+addTask	DesktopSprite.h	/^        void addTask();$/;"	p	line:48	language:C++	class:DesktopSprite	access:public	signature:()
+addTask	moc_DesktopSprite.cpp	/^        case 2: _t->addTask(); break;$/;"	p	line:56	language:C++	file:	signature:()
+addWidget	AddTaskDialog.cpp	/^    grid_layout->addWidget(content, 0, 1);$/;"	p	line:59	language:C++	file:	signature:(content, 0, 1)
+addWidget	AddTaskDialog.cpp	/^    grid_layout->addWidget(date, 2, 1);$/;"	p	line:65	language:C++	file:	signature:(date, 2, 1)
+addWidget	AddTaskDialog.cpp	/^    grid_layout->addWidget(label_date, 2, 0);$/;"	p	line:64	language:C++	file:	signature:(label_date, 2, 0)
+addWidget	AddTaskDialog.cpp	/^    grid_layout->addWidget(label_time, 1, 0);$/;"	p	line:61	language:C++	file:	signature:(label_time, 1, 0)
+addWidget	AddTaskDialog.cpp	/^    grid_layout->addWidget(label_title, 0, 0);$/;"	p	line:58	language:C++	file:	signature:(label_title, 0, 0)
+addWidget	AddTaskDialog.cpp	/^    grid_layout->addWidget(time, 1, 1);$/;"	p	line:62	language:C++	file:	signature:(time, 1, 1)
+addWidget	AddTaskDialog.cpp	/^    hbox_layout->addWidget(button_cancel);$/;"	p	line:69	language:C++	file:	signature:(button_cancel)
+addWidget	AddTaskDialog.cpp	/^    hbox_layout->addWidget(button_okay);$/;"	p	line:68	language:C++	file:	signature:(button_okay)
+addWidget	TasksBrowser.cpp	/^    hbox->addWidget(button_add);$/;"	p	line:73	language:C++	file:	signature:(button_add)
+addWidget	TasksBrowser.cpp	/^    hbox->addWidget(button_delete);$/;"	p	line:74	language:C++	file:	signature:(button_delete)
+addWidget	TasksBrowser.cpp	/^    main_layout->addWidget(table, 0, 0);$/;"	p	line:77	language:C++	file:	signature:(table, 0, 0)
+add_task	DesktopSprite.h	/^        QAction *add_task;$/;"	m	line:58	language:C++	class:DesktopSprite	access:private
+app	main.cpp	/^    QApplication app(argc, argv);$/;"	p	line:11	language:C++	file:	signature:(argc, argv)
+app_handle	DesktopSprite.h	/^        QApplication *app_handle;$/;"	m	line:54	language:C++	class:DesktopSprite	access:private
+browseTasks	DesktopSprite.cpp	/^void DesktopSprite::browseTasks()$/;"	f	line:119	language:C++	class:DesktopSprite	signature:()
+browseTasks	DesktopSprite.h	/^        void browseTasks();$/;"	p	line:49	language:C++	class:DesktopSprite	access:public	signature:()
+browseTasks	moc_DesktopSprite.cpp	/^        case 3: _t->browseTasks(); break;$/;"	p	line:57	language:C++	file:	signature:()
+browse_tasks	DesktopSprite.h	/^        QAction *browse_tasks;$/;"	m	line:59	language:C++	class:DesktopSprite	access:private
+button_add	TasksBrowser.h	/^    QPushButton *button_add;$/;"	m	line:36	language:C++	class:TasksBrowser	access:private
+button_cancel	AddTaskDialog.h	/^    QPushButton *button_cancel;$/;"	m	line:49	language:C++	class:AddTaskDialog	access:private
+button_delete	TasksBrowser.h	/^    QPushButton *button_delete;$/;"	m	line:35	language:C++	class:TasksBrowser	access:private
+button_delete_clicked	TasksBrowser.cpp	/^void TasksBrowser::button_delete_clicked() $/;"	f	line:85	language:C++	class:TasksBrowser	signature:()
+button_delete_clicked	TasksBrowser.h	/^    void button_delete_clicked();$/;"	p	line:26	language:C++	class:TasksBrowser	access:public	signature:()
+button_delete_clicked	moc_TasksBrowser.cpp	/^        case 0: _t->button_delete_clicked(); break;$/;"	p	line:49	language:C++	file:	signature:()
+button_okay	AddTaskDialog.h	/^    QPushButton *button_okay;$/;"	m	line:48	language:C++	class:AddTaskDialog	access:private
+button_okay_clicked	AddTaskDialog.cpp	/^void AddTaskDialog::button_okay_clicked() $/;"	f	line:79	language:C++	class:AddTaskDialog	signature:()
+button_okay_clicked	AddTaskDialog.h	/^    void button_okay_clicked();$/;"	p	line:33	language:C++	class:AddTaskDialog	access:public	signature:()
+button_okay_clicked	moc_AddTaskDialog.cpp	/^        case 0: _t->button_okay_clicked(); break;$/;"	p	line:49	language:C++	file:	signature:()
+close	TaskRecorder.cpp	/^    dbconn.close();$/;"	p	line:31	language:C++	file:	signature:()
+codec	main.cpp	/^    QTextCodec *codec = QTextCodec::codecForName("GB2312");  $/;"	l	line:13	language:C++
+connect	AddTaskDialog.cpp	/^    QObject::connect(button_cancel, SIGNAL(clicked()), this, SLOT(close()));$/;"	p	line:17	language:C++	class:QObject	file:	signature:(button_cancel, SIGNAL(clicked()), this, SLOT(close()))
+connect	AddTaskDialog.cpp	/^    QObject::connect(button_okay, SIGNAL(clicked()), this, SLOT(button_okay_clicked()));$/;"	p	line:16	language:C++	class:QObject	file:	signature:(button_okay, SIGNAL(clicked()), this, SLOT(button_okay_clicked()))
+connect	AddTaskDialog.cpp	/^    QObject::connect(date, SIGNAL(clicked(const QDate &)), time, SLOT(setDate(const QDate &)));$/;"	p	line:20	language:C++	class:QObject	file:	signature:(date, SIGNAL(clicked(const QDate &)), time, SLOT(setDate(const QDate &)))
+connect	AddTaskDialog.cpp	/^    QObject::connect(time, SIGNAL(dateChanged(const QDate &)), date, SLOT(setSelectedDate(const QDate &)));$/;"	p	line:19	language:C++	class:QObject	file:	signature:(time, SIGNAL(dateChanged(const QDate &)), date, SLOT(setSelectedDate(const QDate &)))
+connect	DesktopSprite.cpp	/^    QObject::connect(add_task, SIGNAL(triggered()), this, SLOT(addTask()));$/;"	p	line:21	language:C++	class:QObject	file:	signature:(add_task, SIGNAL(triggered()), this, SLOT(addTask()))
+connect	DesktopSprite.cpp	/^    QObject::connect(browse_tasks, SIGNAL(triggered()), this, SLOT(browseTasks()));$/;"	p	line:22	language:C++	class:QObject	file:	signature:(browse_tasks, SIGNAL(triggered()), this, SLOT(browseTasks()))
+connect	DesktopSprite.cpp	/^    QObject::connect(exit_all, SIGNAL(triggered()), app_handle, SLOT(quit()));$/;"	p	line:20	language:C++	class:QObject	file:	signature:(exit_all, SIGNAL(triggered()), app_handle, SLOT(quit()))
+connect	DesktopSprite.cpp	/^    QObject::connect(this, SIGNAL(customContextMenuRequested(const QPoint&)), this, SLOT(showMouseRightButtonMenu(const QPoint&)));$/;"	p	line:29	language:C++	class:QObject	file:	signature:(this, SIGNAL(customContextMenuRequested(const QPoint&)), this, SLOT(showMouseRightButtonMenu(const QPoint&)))
+content	AddTaskDialog.h	/^    QTextEdit *content;$/;"	m	line:44	language:C++	class:AddTaskDialog	access:private
+currentDateTime	AddTaskDialog.cpp	/^    time->setDateTime(QDateTime::currentDateTime());$/;"	p	line:22	language:C++	file:	signature:()
+date	AddTaskDialog.h	/^    QCalendarWidget *date;$/;"	m	line:45	language:C++	class:AddTaskDialog	access:private
+dbconn	TaskRecorder.h	/^    QSqlDatabase dbconn;$/;"	m	line:21	language:C++	class:TaskRecorder	access:private
+dialog	DesktopSprite.cpp	/^    AddTaskDialog dialog(recorder, this);$/;"	p	line:115	language:C++	file:	signature:(recorder, this)
+dialog	DesktopSprite.cpp	/^    TasksBrowser dialog(recorder, this);$/;"	p	line:121	language:C++	file:	signature:(recorder, this)
+displaySize	AddTaskDialog.cpp	/^    QSize displaySize = QApplication::desktop()->screenGeometry(this).size();$/;"	l	line:9	language:C++
+displaySize	DesktopSprite.cpp	/^    QSize displaySize = QApplication::desktop()->screenGeometry(this).size();$/;"	l	line:39	language:C++
+displaySize	TasksBrowser.cpp	/^    QSize displaySize = QApplication::desktop()->screenGeometry(this).size();$/;"	l	line:9	language:C++
+ele0	TaskRecorder.cpp	/^          int ele0=query.value(0).toInt();$/;"	l	line:71	language:C++
+ele1	TaskRecorder.cpp	/^          QString ele1=query.value(1).toString();$/;"	l	line:72	language:C++
+ele1	TaskRecorder.cpp	/^          qDebug()<<ele0<<ele1;$/;"	l	line:73	language:C++
+endl	DesktopSprite.cpp	/^    std::cout << "hello world" << std::endl;$/;"	m	line:163	language:C++	class:std	file:
+event	AddTaskDialog.cpp	/^    QString event = content->toPlainText();$/;"	l	line:81	language:C++
+exec	DesktopSprite.cpp	/^    dialog.exec();$/;"	p	line:116	language:C++	file:	signature:()
+exec	DesktopSprite.cpp	/^    dialog.exec();$/;"	p	line:122	language:C++	file:	signature:()
+exec	TaskRecorder.cpp	/^    query.exec(sql_statement);$/;"	p	line:48	language:C++	file:	signature:(sql_statement)
+exec	TaskRecorder.cpp	/^    query.exec(sql_statement);$/;"	p	line:65	language:C++	file:	signature:(sql_statement)
+exit_all	DesktopSprite.h	/^        QAction *exit_all;$/;"	m	line:57	language:C++	class:DesktopSprite	access:private
+font	TasksBrowser.cpp	/^    QFont font = table->horizontalHeader()->font();$/;"	l	line:40	language:C++
+getStaticMetaObject	moc_AddTaskDialog.cpp	/^const QMetaObject &AddTaskDialog::getStaticMetaObject() { return staticMetaObject; }$/;"	f	line:66	language:C++	class:AddTaskDialog	signature:()
+getStaticMetaObject	moc_DesktopSprite.cpp	/^const QMetaObject &DesktopSprite::getStaticMetaObject() { return staticMetaObject; }$/;"	f	line:73	language:C++	class:DesktopSprite	signature:()
+getStaticMetaObject	moc_TasksBrowser.cpp	/^const QMetaObject &TasksBrowser::getStaticMetaObject() { return staticMetaObject; }$/;"	f	line:66	language:C++	class:TasksBrowser	signature:()
+grid_layout	AddTaskDialog.h	/^    QGridLayout *grid_layout;$/;"	m	line:52	language:C++	class:AddTaskDialog	access:private
+hbox	TasksBrowser.h	/^    QHBoxLayout *hbox;$/;"	m	line:39	language:C++	class:TasksBrowser	access:private
+hbox_layout	AddTaskDialog.h	/^    QHBoxLayout *hbox_layout;$/;"	m	line:53	language:C++	class:AddTaskDialog	access:private
+header	TasksBrowser.cpp	/^    QStringList header;$/;"	l	line:35	language:C++
+iconActivated	DesktopSprite.cpp	/^void DesktopSprite::iconActivated(QSystemTrayIcon::ActivationReason reason) $/;"	f	line:97	language:C++	class:DesktopSprite	signature:(QSystemTrayIcon::ActivationReason reason)
+iconActivated	DesktopSprite.h	/^        void iconActivated(QSystemTrayIcon::ActivationReason);$/;"	p	line:46	language:C++	class:DesktopSprite	access:public	signature:(QSystemTrayIcon::ActivationReason)
+image	DesktopSprite.h	/^        QPixmap image; $/;"	m	line:53	language:C++	class:DesktopSprite	access:private
+initDatabase	TaskRecorder.cpp	/^int TaskRecorder::initDatabase()$/;"	f	line:34	language:C++	class:TaskRecorder	signature:()
+initDatabase	TaskRecorder.h	/^    int initDatabase();$/;"	p	line:16	language:C++	class:TaskRecorder	access:public	signature:()
+initMenu	DesktopSprite.cpp	/^void DesktopSprite::initMenu()$/;"	f	line:128	language:C++	class:DesktopSprite	signature:()
+initMenu	DesktopSprite.h	/^        void initMenu();$/;"	p	line:42	language:C++	class:DesktopSprite	access:private	signature:()
+initWidgets	AddTaskDialog.cpp	/^void AddTaskDialog::initWidgets()$/;"	f	line:44	language:C++	class:AddTaskDialog	signature:()
+initWidgets	AddTaskDialog.h	/^    void initWidgets();$/;"	p	line:30	language:C++	class:AddTaskDialog	access:public	signature:()
+initWidgets	TasksBrowser.cpp	/^void TasksBrowser::initWidgets()$/;"	f	line:28	language:C++	class:TasksBrowser	signature:()
+initWidgets	TasksBrowser.h	/^    void initWidgets();$/;"	p	line:23	language:C++	class:TasksBrowser	access:public	signature:()
+keyReleaseEvent	DesktopSprite.cpp	/^void DesktopSprite::keyReleaseEvent(QKeyEvent * event) $/;"	f	line:160	language:C++	class:DesktopSprite	signature:(QKeyEvent * event)
+keyReleaseEvent	DesktopSprite.h	/^        void keyReleaseEvent(QKeyEvent * event);$/;"	p	line:39	language:C++	class:DesktopSprite	access:protected	signature:(QKeyEvent * event)
+label_date	AddTaskDialog.h	/^    QLabel *label_date;$/;"	m	line:41	language:C++	class:AddTaskDialog	access:private
+label_time	AddTaskDialog.h	/^    QLabel *label_time;$/;"	m	line:42	language:C++	class:AddTaskDialog	access:private
+label_title	AddTaskDialog.h	/^    QLabel *label_title;$/;"	m	line:40	language:C++	class:AddTaskDialog	access:private
+main	main.cpp	/^int main(int argc, char *argv[]) $/;"	f	line:9	language:C++	signature:(int argc, char *argv[])
+main_layout	AddTaskDialog.h	/^    QGridLayout *main_layout;$/;"	m	line:51	language:C++	class:AddTaskDialog	access:private
+main_layout	TasksBrowser.h	/^    QGridLayout *main_layout;$/;"	m	line:38	language:C++	class:TasksBrowser	access:private
+metaObject	moc_AddTaskDialog.cpp	/^const QMetaObject *AddTaskDialog::metaObject() const$/;"	f	line:69	language:C++	class:AddTaskDialog	signature:() const
+metaObject	moc_DesktopSprite.cpp	/^const QMetaObject *DesktopSprite::metaObject() const$/;"	f	line:76	language:C++	class:DesktopSprite	signature:() const
+metaObject	moc_TasksBrowser.cpp	/^const QMetaObject *TasksBrowser::metaObject() const$/;"	f	line:69	language:C++	class:TasksBrowser	signature:() const
+mouseMoveEvent	DesktopSprite.cpp	/^void DesktopSprite::mouseMoveEvent(QMouseEvent * event)$/;"	f	line:138	language:C++	class:DesktopSprite	signature:(QMouseEvent * event)
+mouseMoveEvent	DesktopSprite.h	/^        void mouseMoveEvent(QMouseEvent * event);$/;"	p	line:36	language:C++	class:DesktopSprite	access:protected	signature:(QMouseEvent * event)
+mousePressEvent	DesktopSprite.cpp	/^void DesktopSprite::mousePressEvent(QMouseEvent * event)$/;"	f	line:148	language:C++	class:DesktopSprite	signature:(QMouseEvent * event)
+mousePressEvent	DesktopSprite.h	/^        void mousePressEvent(QMouseEvent * event);$/;"	p	line:37	language:C++	class:DesktopSprite	access:protected	signature:(QMouseEvent * event)
+mouseReleaseEvent	DesktopSprite.cpp	/^void DesktopSprite::mouseReleaseEvent(QMouseEvent *)$/;"	f	line:154	language:C++	class:DesktopSprite	signature:(QMouseEvent *)
+mouseReleaseEvent	DesktopSprite.h	/^        void mouseReleaseEvent(QMouseEvent * event);$/;"	p	line:38	language:C++	class:DesktopSprite	access:protected	signature:(QMouseEvent * event)
+paintEvent	DesktopSprite.cpp	/^void DesktopSprite::paintEvent(QPaintEvent *)$/;"	f	line:81	language:C++	class:DesktopSprite	signature:(QPaintEvent *)
+paintEvent	DesktopSprite.h	/^        void paintEvent(QPaintEvent *event);$/;"	p	line:33	language:C++	class:DesktopSprite	access:public	signature:(QPaintEvent *event)
+painter	DesktopSprite.cpp	/^    QPainter painter(this);$/;"	p	line:84	language:C++	file:	signature:(this)
+pos	DesktopSprite.cpp	/^            tray->contextMenu()->popup(QCursor::pos());$/;"	p	line:102	language:C++	file:	signature:()
+pos	DesktopSprite.cpp	/^        const QPoint pos = event->globalPos();$/;"	l	line:142	language:C++
+pos	DesktopSprite.cpp	/^    qMenu->exec(QCursor::pos());$/;"	p	line:94	language:C++	file:	signature:()
+pressed	DesktopSprite.h	/^        bool pressed;$/;"	m	line:62	language:C++	class:DesktopSprite	access:private
+prevPt	DesktopSprite.h	/^        QPoint prevPt;$/;"	m	line:61	language:C++	class:DesktopSprite	access:private
+qCleanupResources_QtSprite	qrc_QtSprite.cpp	/^int QT_MANGLE_NAMESPACE(qCleanupResources_QtSprite)()$/;"	f	line:9026	language:C++	signature:()
+qInitResources_QtSprite	qrc_QtSprite.cpp	/^int QT_MANGLE_NAMESPACE(qInitResources_QtSprite)()$/;"	f	line:9017	language:C++	signature:()
+qMenu	DesktopSprite.h	/^        QMenu *qMenu;$/;"	m	line:52	language:C++	class:DesktopSprite	access:private
+qRegisterResourceData	qrc_QtSprite.cpp	/^extern Q_CORE_EXPORT bool qRegisterResourceData$/;"	p	line:9008	language:C++	file:	signature:(int, const unsigned char *, const unsigned char *, const unsigned char *)
+qUnregisterResourceData	qrc_QtSprite.cpp	/^extern Q_CORE_EXPORT bool qUnregisterResourceData$/;"	p	line:9011	language:C++	file:	signature:(int, const unsigned char *, const unsigned char *, const unsigned char *)
+qt_meta_data_AddTaskDialog	moc_AddTaskDialog.cpp	/^static const uint qt_meta_data_AddTaskDialog[] = {$/;"	v	line:20	language:C++	file:
+qt_meta_data_DesktopSprite	moc_DesktopSprite.cpp	/^static const uint qt_meta_data_DesktopSprite[] = {$/;"	v	line:20	language:C++	file:
+qt_meta_data_TasksBrowser	moc_TasksBrowser.cpp	/^static const uint qt_meta_data_TasksBrowser[] = {$/;"	v	line:20	language:C++	file:
+qt_meta_stringdata_AddTaskDialog	moc_AddTaskDialog.cpp	/^static const char qt_meta_stringdata_AddTaskDialog[] = {$/;"	v	line:39	language:C++	file:
+qt_meta_stringdata_DesktopSprite	moc_DesktopSprite.cpp	/^static const char qt_meta_stringdata_DesktopSprite[] = {$/;"	v	line:42	language:C++	file:
+qt_meta_stringdata_TasksBrowser	moc_TasksBrowser.cpp	/^static const char qt_meta_stringdata_TasksBrowser[] = {$/;"	v	line:39	language:C++	file:
+qt_metacall	moc_AddTaskDialog.cpp	/^int AddTaskDialog::qt_metacall(QMetaObject::Call _c, int _id, void **_a)$/;"	f	line:82	language:C++	class:AddTaskDialog	signature:(QMetaObject::Call _c, int _id, void **_a)
+qt_metacall	moc_DesktopSprite.cpp	/^int DesktopSprite::qt_metacall(QMetaObject::Call _c, int _id, void **_a)$/;"	f	line:89	language:C++	class:DesktopSprite	signature:(QMetaObject::Call _c, int _id, void **_a)
+qt_metacall	moc_TasksBrowser.cpp	/^int TasksBrowser::qt_metacall(QMetaObject::Call _c, int _id, void **_a)$/;"	f	line:82	language:C++	class:TasksBrowser	signature:(QMetaObject::Call _c, int _id, void **_a)
+qt_metacast	moc_AddTaskDialog.cpp	/^void *AddTaskDialog::qt_metacast(const char *_clname)$/;"	f	line:74	language:C++	class:AddTaskDialog	signature:(const char *_clname)
+qt_metacast	moc_DesktopSprite.cpp	/^void *DesktopSprite::qt_metacast(const char *_clname)$/;"	f	line:81	language:C++	class:DesktopSprite	signature:(const char *_clname)
+qt_metacast	moc_TasksBrowser.cpp	/^void *TasksBrowser::qt_metacast(const char *_clname)$/;"	f	line:74	language:C++	class:TasksBrowser	signature:(const char *_clname)
+qt_resource_data	qrc_QtSprite.cpp	/^static const unsigned char qt_resource_data[] = {$/;"	v	line:12	language:C++	file:
+qt_resource_name	qrc_QtSprite.cpp	/^static const unsigned char qt_resource_name[] = {$/;"	v	line:8975	language:C++	file:
+qt_resource_struct	qrc_QtSprite.cpp	/^static const unsigned char qt_resource_struct[] = {$/;"	v	line:8994	language:C++	file:
+qt_static_metacall	moc_AddTaskDialog.cpp	/^void AddTaskDialog::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)$/;"	f	line:43	language:C++	class:AddTaskDialog	signature:(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+qt_static_metacall	moc_DesktopSprite.cpp	/^void DesktopSprite::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)$/;"	f	line:48	language:C++	class:DesktopSprite	signature:(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+qt_static_metacall	moc_TasksBrowser.cpp	/^void TasksBrowser::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)$/;"	f	line:43	language:C++	class:TasksBrowser	signature:(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+query	TaskRecorder.h	/^    QSqlQuery query;$/;"	m	line:22	language:C++	class:TaskRecorder	access:private
+quit	DesktopSprite.cpp	/^            app_handle->quit();$/;"	p	line:167	language:C++	file:	signature:()
+recorder	AddTaskDialog.h	/^    TaskRecorder *recorder;$/;"	m	line:37	language:C++	class:AddTaskDialog	access:private
+recorder	DesktopSprite.h	/^        TaskRecorder *recorder;$/;"	m	line:67	language:C++	class:DesktopSprite	access:private
+recorder	TasksBrowser.h	/^    TaskRecorder *recorder;$/;"	m	line:30	language:C++	class:TasksBrowser	access:private
+removeTask	TaskRecorder.cpp	/^int TaskRecorder::removeTask(int id)$/;"	f	line:62	language:C++	class:TaskRecorder	signature:(int id)
+removeTask	TaskRecorder.h	/^    int removeTask(int id);$/;"	p	line:18	language:C++	class:TaskRecorder	access:public	signature:(int id)
+setBold	TasksBrowser.cpp	/^    font.setBold(true);$/;"	p	line:41	language:C++	file:	signature:(true)
+setCodecForCStrings	main.cpp	/^    QTextCodec::setCodecForCStrings(codec);  $/;"	p	line:16	language:C++	class:QTextCodec	file:	signature:(codec)
+setCodecForLocale	main.cpp	/^    QTextCodec::setCodecForLocale(codec);  $/;"	p	line:15	language:C++	class:QTextCodec	file:	signature:(codec)
+setCodecForTr	main.cpp	/^    QTextCodec::setCodecForTr(codec);  $/;"	p	line:17	language:C++	class:QTextCodec	file:	signature:(codec)
+setContextMenu	DesktopSprite.cpp	/^    tray->setContextMenu(qMenu);$/;"	p	line:52	language:C++	file:	signature:(qMenu)
+setEditTriggers	TasksBrowser.cpp	/^    table->setEditTriggers(QAbstractItemView::NoEditTriggers);$/;"	p	line:52	language:C++	file:	signature:(QAbstractItemView::NoEditTriggers)
+setFrameShape	TasksBrowser.cpp	/^    table->setFrameShape(QFrame::NoFrame);$/;"	p	line:47	language:C++	file:	signature:(QFrame::NoFrame)
+setHorizontalHeaderLabels	TasksBrowser.cpp	/^    table->setHorizontalHeaderLabels(header);$/;"	p	line:37	language:C++	file:	signature:(header)
+setIcon	DesktopSprite.cpp	/^    tray->setIcon(icon);$/;"	p	line:53	language:C++	file:	signature:(icon)
+setSelectionBehavior	TasksBrowser.cpp	/^    table->setSelectionBehavior(QAbstractItemView::SelectRows);$/;"	p	line:51	language:C++	file:	signature:(QAbstractItemView::SelectRows)
+setSelectionMode	TasksBrowser.cpp	/^    table->setSelectionMode(QAbstractItemView::ExtendedSelection); $/;"	p	line:50	language:C++	file:	signature:(QAbstractItemView::ExtendedSelection)
+setShowGrid	TasksBrowser.cpp	/^    table->setShowGrid(false); $/;"	p	line:48	language:C++	file:	signature:(false)
+show	DesktopSprite.cpp	/^    tray->show();$/;"	p	line:57	language:C++	file:	signature:()
+show	main.cpp	/^    sprite.show();$/;"	p	line:24	language:C++	file:	signature:()
+showMouseRightButtonMenu	DesktopSprite.cpp	/^void DesktopSprite::showMouseRightButtonMenu(const QPoint &)$/;"	f	line:91	language:C++	class:DesktopSprite	signature:(const QPoint &)
+showMouseRightButtonMenu	DesktopSprite.h	/^        void showMouseRightButtonMenu(const QPoint&);$/;"	p	line:45	language:C++	class:DesktopSprite	access:public	signature:(const QPoint&)
+size	DesktopSprite.cpp	/^    QSize size = displaySize - this->size();$/;"	l	line:46	language:C++
+sql_statement	TaskRecorder.cpp	/^    QString sql_statement = QString("delete from table tasks where id = %1").arg(id);$/;"	l	line:64	language:C++
+sql_statement	TaskRecorder.cpp	/^    QString sql_statement = QString($/;"	l	line:44	language:C++
+staticMetaObject	moc_AddTaskDialog.cpp	/^const QMetaObject AddTaskDialog::staticMetaObject = {$/;"	m	line:60	language:C++	class:AddTaskDialog	file:
+staticMetaObject	moc_DesktopSprite.cpp	/^const QMetaObject DesktopSprite::staticMetaObject = {$/;"	m	line:67	language:C++	class:DesktopSprite	file:
+staticMetaObject	moc_TasksBrowser.cpp	/^const QMetaObject TasksBrowser::staticMetaObject = {$/;"	m	line:60	language:C++	class:TasksBrowser	file:
+staticMetaObjectExtraData	moc_AddTaskDialog.cpp	/^const QMetaObjectExtraData AddTaskDialog::staticMetaObjectExtraData = {$/;"	m	line:56	language:C++	class:AddTaskDialog	file:
+staticMetaObjectExtraData	moc_DesktopSprite.cpp	/^const QMetaObjectExtraData DesktopSprite::staticMetaObjectExtraData = {$/;"	m	line:63	language:C++	class:DesktopSprite	file:
+staticMetaObjectExtraData	moc_TasksBrowser.cpp	/^const QMetaObjectExtraData TasksBrowser::staticMetaObjectExtraData = {$/;"	m	line:56	language:C++	class:TasksBrowser	file:
+std::endl	DesktopSprite.cpp	/^    std::cout << "hello world" << std::endl;$/;"	m	line:163	language:C++	class:std	file:
+table	TasksBrowser.h	/^    QTableWidget *table;$/;"	m	line:33	language:C++	class:TasksBrowser	access:private
+time	AddTaskDialog.h	/^    QDateTimeEdit *time;$/;"	m	line:46	language:C++	class:AddTaskDialog	access:private
+time_stamp	AddTaskDialog.cpp	/^    QDateTime time_stamp = time->dateTime();$/;"	l	line:82	language:C++
+timer	DesktopSprite.h	/^        QTimer *timer;$/;"	m	line:64	language:C++	class:DesktopSprite	access:private
+translator	main.cpp	/^    QTranslator translator;$/;"	l	line:19	language:C++
+tray	DesktopSprite.h	/^        QSystemTrayIcon *tray;$/;"	m	line:65	language:C++	class:DesktopSprite	access:private
+warning	AddTaskDialog.cpp	/^        QMessageBox::warning(this, QObject::tr("Task Manager"), QObject::tr("Please enter the event description!"));$/;"	p	line:92	language:C++	class:QMessageBox	file:	signature:(this, QObject::tr(Ó), QObject::tr(Ó))
+~AddTaskDialog	AddTaskDialog.cpp	/^AddTaskDialog::~AddTaskDialog()$/;"	f	line:25	language:C++	class:AddTaskDialog	signature:()
+~AddTaskDialog	AddTaskDialog.h	/^    virtual ~AddTaskDialog();$/;"	p	line:28	language:C++	class:AddTaskDialog	access:public	signature:()
+~DesktopSprite	DesktopSprite.cpp	/^DesktopSprite::~DesktopSprite()$/;"	f	line:67	language:C++	class:DesktopSprite	signature:()
+~DesktopSprite	DesktopSprite.h	/^        virtual ~DesktopSprite();$/;"	p	line:30	language:C++	class:DesktopSprite	access:public	signature:()
+~TaskRecorder	TaskRecorder.cpp	/^TaskRecorder::~TaskRecorder()$/;"	f	line:29	language:C++	class:TaskRecorder	signature:()
+~TaskRecorder	TaskRecorder.h	/^    virtual ~TaskRecorder();$/;"	p	line:14	language:C++	class:TaskRecorder	access:public	signature:()
+~TasksBrowser	TasksBrowser.cpp	/^TasksBrowser::~TasksBrowser() $/;"	f	line:17	language:C++	class:TasksBrowser	signature:()
+~TasksBrowser	TasksBrowser.h	/^    virtual ~TasksBrowser();$/;"	p	line:21	language:C++	class:TasksBrowser	access:public	signature:()
