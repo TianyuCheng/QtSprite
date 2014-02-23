@@ -16,9 +16,12 @@
 #include <QIcon>
 #include <QTimer>
 #include <QDateTime>
+#include <QSound>
 
 #include <iostream>
 #include <vector>
+
+#include "QNotify.h"
 
 #include "TaskRecorder.h"
 #include "AddTaskDialog.h"
@@ -71,7 +74,9 @@ class DesktopSprite : public QWidget
         QTimer *timer;
         QSystemTrayIcon *tray;
 
+        QNotify *notify;
         TaskRecorder *recorder;
+        QSound * alertSound;
 };
 
  #endif /* end of include guard: DESKTOP_SPRITE */

@@ -8,7 +8,7 @@ DEPENDPATH += .
 INCLUDEPATH += .
 TRANSLATION += *.ts
 RESOURCES = QtSprite.qrc
-QT += sql widgets
+QT += sql widgets multimedia
 CONFIG += debug
 
 macx {

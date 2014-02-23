@@ -5,5 +5,6 @@
         <file>images/error.png</file>
         <file>images/success.png</file>
         <file>images/warning.png</file>
+        <file>sound/alarmecho.wav</file>
     </qresource>
 </RCC>

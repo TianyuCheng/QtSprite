@@ -10,10 +10,9 @@ TaskRecorder::TaskRecorder()
         return;
    }
 
-   qDebug() << "open sqlite connection";
-
    query = QSqlQuery(dbconn);
    query.exec("create table if not exists tasks(id integer primary key autoincrement,event varchar, time datetime)");
+   qDebug() << "open sqlite connection";
 }
 
 TaskRecorder::~TaskRecorder()

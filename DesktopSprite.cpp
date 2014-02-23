@@ -61,6 +61,9 @@ DesktopSprite::DesktopSprite(QApplication *app) : QWidget(0), app_handle(app), p
     recorder = new TaskRecorder;
 
     this->initTaskSchedule();
+
+    this->notify = new QNotify(this);
+    this->alertSound = new QSound(":/sound/alarmecho.wav");
 }
 
 DesktopSprite::~DesktopSprite()
@@ -76,8 +79,13 @@ DesktopSprite::~DesktopSprite()
 
     qMenu->deleteLater();
 
+    delete notify;
     delete recorder;
+    delete alertSound;
+
+    notify = 0;
     recorder = 0;
+    alertSound = 0;
 }
 
 void DesktopSprite::paintEvent(QPaintEvent *)
@@ -111,7 +119,7 @@ void DesktopSprite::iconActivated(QSystemTrayIcon::ActivationReason reason)
             break;
     }
 }
-   
+
 void DesktopSprite::addTask()
 {
     AddTaskDialog dialog(recorder, this);
@@ -129,6 +137,8 @@ void DesktopSprite::alarm() {
     this->tasksForToday.erase(this->tasksForToday.begin());
 
     qDebug() << "alarm:" << currentTask->description;
+    this->alertSound->play();
+    this->notify->notify(currentTask->description, QNotify::SUCCESS, 3000);
     handleTask();
 }
 
@@ -210,7 +220,6 @@ void DesktopSprite::mouseReleaseEvent(QMouseEvent *)
 // shortcuts
 void DesktopSprite::keyReleaseEvent(QKeyEvent * event) 
 {
-//    QMessageBox::critical(0, QObject::tr("Systray"), QObject::tr("Key pressed"));
     switch (event->key())
     {
         case Qt::Key_Escape:             // exit()

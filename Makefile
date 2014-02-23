@@ -12,13 +12,13 @@ MAKEFILE      = Makefile
 
 CC            = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang
 CXX           = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
-DEFINES       = -DQT_WIDGETS_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_CORE_LIB
+DEFINES       = -DQT_MULTIMEDIA_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_CORE_LIB
 CFLAGS        = -pipe -g -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -mmacosx-version-min=10.6 -Wall -W -fPIE $(DEFINES)
 CXXFLAGS      = -pipe -g -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -mmacosx-version-min=10.6 -Wall -W -fPIE $(DEFINES)
-INCPATH       = -I../../../Software/Qt/5.2.0/clang_64/mkspecs/macx-clang -I. -I. -I../../../Software/Qt/5.2.0/clang_64/lib/QtWidgets.framework/Versions/5/Headers -I../../../Software/Qt/5.2.0/clang_64/lib/QtSql.framework/Versions/5/Headers -I../../../Software/Qt/5.2.0/clang_64/lib/QtGui.framework/Versions/5/Headers -I../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/OpenGL.framework/Versions/A/Headers -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/AGL.framework/Headers -F/Users/SkySource/Software/Qt/5.2.0/clang_64/lib
+INCPATH       = -I../../../Software/Qt/5.2.0/clang_64/mkspecs/macx-clang -I. -I. -I../../../Software/Qt/5.2.0/clang_64/lib/QtMultimedia.framework/Versions/5/Headers -I../../../Software/Qt/5.2.0/clang_64/lib/QtWidgets.framework/Versions/5/Headers -I../../../Software/Qt/5.2.0/clang_64/lib/QtNetwork.framework/Versions/5/Headers -I../../../Software/Qt/5.2.0/clang_64/lib/QtSql.framework/Versions/5/Headers -I../../../Software/Qt/5.2.0/clang_64/lib/QtGui.framework/Versions/5/Headers -I../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/OpenGL.framework/Versions/A/Headers -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/AGL.framework/Headers -F/Users/SkySource/Software/Qt/5.2.0/clang_64/lib
 LINK          = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
 LFLAGS        = -headerpad_max_install_names -Wl,-syslibroot,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -mmacosx-version-min=10.6
-LIBS          = $(SUBLIBS) -F/Users/SkySource/Software/Qt/5.2.0/clang_64/lib -framework QtWidgets -framework QtGui -framework QtCore -framework QtSql -framework OpenGL -framework AGL 
+LIBS          = $(SUBLIBS) -F/Users/SkySource/Software/Qt/5.2.0/clang_64/lib -framework QtMultimedia -framework QtGui -framework QtCore -framework QtNetwork -framework QtWidgets -framework QtSql -framework OpenGL -framework AGL 
 AR            = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar cq
 RANLIB        = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib -s
 QMAKE         = /Users/SkySource/Software/Qt/5.2.0/clang_64/bin/qmake
@@ -333,9 +333,11 @@ Makefile: QtSprite.pro ../../../Software/Qt/5.2.0/clang_64/mkspecs/macx-clang/qm
 		../../../Software/Qt/5.2.0/clang_64/mkspecs/features/lex.prf \
 		QtSprite.pro \
 		QtSprite.qrc \
-		/Users/SkySource/Software/Qt/5.2.0/clang_64/lib/QtWidgets.framework/QtWidgets.prl \
+		/Users/SkySource/Software/Qt/5.2.0/clang_64/lib/QtMultimedia.framework/QtMultimedia.prl \
 		/Users/SkySource/Software/Qt/5.2.0/clang_64/lib/QtGui.framework/QtGui.prl \
 		/Users/SkySource/Software/Qt/5.2.0/clang_64/lib/QtCore.framework/QtCore.prl \
+		/Users/SkySource/Software/Qt/5.2.0/clang_64/lib/QtNetwork.framework/QtNetwork.prl \
+		/Users/SkySource/Software/Qt/5.2.0/clang_64/lib/QtWidgets.framework/QtWidgets.prl \
 		/Users/SkySource/Software/Qt/5.2.0/clang_64/lib/QtSql.framework/QtSql.prl
 	$(QMAKE) -spec macx-clang CONFIG+=x86_64 -o Makefile QtSprite.pro
 ../../../Software/Qt/5.2.0/clang_64/mkspecs/features/spec_pre.prf:
@@ -448,9 +450,11 @@ Makefile: QtSprite.pro ../../../Software/Qt/5.2.0/clang_64/mkspecs/macx-clang/qm
 ../../../Software/Qt/5.2.0/clang_64/mkspecs/features/lex.prf:
 QtSprite.pro:
 QtSprite.qrc:
-/Users/SkySource/Software/Qt/5.2.0/clang_64/lib/QtWidgets.framework/QtWidgets.prl:
+/Users/SkySource/Software/Qt/5.2.0/clang_64/lib/QtMultimedia.framework/QtMultimedia.prl:
 /Users/SkySource/Software/Qt/5.2.0/clang_64/lib/QtGui.framework/QtGui.prl:
 /Users/SkySource/Software/Qt/5.2.0/clang_64/lib/QtCore.framework/QtCore.prl:
+/Users/SkySource/Software/Qt/5.2.0/clang_64/lib/QtNetwork.framework/QtNetwork.prl:
+/Users/SkySource/Software/Qt/5.2.0/clang_64/lib/QtWidgets.framework/QtWidgets.prl:
 /Users/SkySource/Software/Qt/5.2.0/clang_64/lib/QtSql.framework/QtSql.prl:
 qmake: FORCE
 	@$(QMAKE) -spec macx-clang CONFIG+=x86_64 -o Makefile QtSprite.pro
@@ -502,11 +506,12 @@ compiler_rcc_make_all: qrc_QtSprite.cpp
 compiler_rcc_clean:
 	-$(DEL_FILE) qrc_QtSprite.cpp
 qrc_QtSprite.cpp: QtSprite.qrc \
+		sound/alarmecho.wav \
 		images/warning.png \
 		images/gift.png \
 		images/error.png \
-		images/success.png \
-		images/yui.png
+		images/yui.png \
+		images/success.png
 	/Users/SkySource/Software/Qt/5.2.0/clang_64/bin/rcc -name QtSprite QtSprite.qrc -o qrc_QtSprite.cpp
 
 compiler_moc_header_make_all: moc_DesktopSprite.cpp moc_AddTaskDialog.cpp moc_TasksBrowser.cpp moc_QNotify.cpp
@@ -626,6 +631,13 @@ moc_DesktopSprite.cpp: ../../../Software/Qt/5.2.0/clang_64/lib/QtWidgets.framewo
 		../../../Software/Qt/5.2.0/clang_64/lib/QtGui.framework/Versions/5/Headers/QIcon \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/QTimer \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/qtimer.h \
+		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/QDateTime \
+		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/qdatetime.h \
+		../../../Software/Qt/5.2.0/clang_64/lib/QtMultimedia.framework/Versions/5/Headers/QSound \
+		../../../Software/Qt/5.2.0/clang_64/lib/QtMultimedia.framework/Versions/5/Headers/qsound.h \
+		QNotify.h \
+		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/QPropertyAnimation \
+		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/qpropertyanimation.h \
 		TaskRecorder.h \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QtWidgets \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qaccessiblewidget.h \
@@ -764,8 +776,7 @@ moc_DesktopSprite.cpp: ../../../Software/Qt/5.2.0/clang_64/lib/QtWidgets.framewo
 		../../../Software/Qt/5.2.0/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqlrelationaltablemodel.h \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqltablemodel.h \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtSql.framework/Versions/5/Headers/qtsqlversion.h \
-		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/QDateTime \
-		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/qdatetime.h \
+		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/QDate \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/QString \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/qstring.h \
 		Task.h \
@@ -778,9 +789,6 @@ moc_DesktopSprite.cpp: ../../../Software/Qt/5.2.0/clang_64/lib/QtWidgets.framewo
 		../../../Software/Qt/5.2.0/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QPushButton \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QGridLayout \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QHBoxLayout \
-		QNotify.h \
-		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/QPropertyAnimation \
-		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/qpropertyanimation.h \
 		TasksBrowser.h \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QTableWidget \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QTableWidgetItem \
@@ -1040,6 +1048,7 @@ moc_AddTaskDialog.cpp: ../../../Software/Qt/5.2.0/clang_64/lib/QtWidgets.framewo
 		../../../Software/Qt/5.2.0/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqlrelationaltablemodel.h \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqltablemodel.h \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtSql.framework/Versions/5/Headers/qtsqlversion.h \
+		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/QDate \
 		Task.h \
 		QNotify.h \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QWidget \
@@ -1296,8 +1305,9 @@ moc_TasksBrowser.cpp: ../../../Software/Qt/5.2.0/clang_64/lib/QtWidgets.framewor
 		../../../Software/Qt/5.2.0/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqlrelationaltablemodel.h \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqltablemodel.h \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtSql.framework/Versions/5/Headers/qtsqlversion.h \
-		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/QDateTime \
+		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/QDate \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/qdatetime.h \
+		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/QDateTime \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/QString \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/qstring.h \
 		Task.h \
@@ -1347,8 +1357,6 @@ main.o: main.cpp ../../../Software/Qt/5.2.0/clang_64/lib/QtWidgets.framework/Ver
 		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/qtranslator.h \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/QString \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/qstring.h \
-		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/QTimer \
-		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/qtimer.h \
 		DesktopSprite.h \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtGui.framework/Versions/5/Headers/QtGui \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtGui.framework/Versions/5/Headers/qaccessible.h \
@@ -1460,6 +1468,15 @@ main.o: main.cpp ../../../Software/Qt/5.2.0/clang_64/lib/QtWidgets.framework/Ver
 		../../../Software/Qt/5.2.0/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QSystemTrayIcon \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qsystemtrayicon.h \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtGui.framework/Versions/5/Headers/QIcon \
+		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/QTimer \
+		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/qtimer.h \
+		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/QDateTime \
+		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/qdatetime.h \
+		../../../Software/Qt/5.2.0/clang_64/lib/QtMultimedia.framework/Versions/5/Headers/QSound \
+		../../../Software/Qt/5.2.0/clang_64/lib/QtMultimedia.framework/Versions/5/Headers/qsound.h \
+		QNotify.h \
+		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/QPropertyAnimation \
+		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/qpropertyanimation.h \
 		TaskRecorder.h \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QtWidgets \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qaccessiblewidget.h \
@@ -1598,8 +1615,7 @@ main.o: main.cpp ../../../Software/Qt/5.2.0/clang_64/lib/QtWidgets.framework/Ver
 		../../../Software/Qt/5.2.0/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqlrelationaltablemodel.h \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqltablemodel.h \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtSql.framework/Versions/5/Headers/qtsqlversion.h \
-		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/QDateTime \
-		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/qdatetime.h \
+		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/QDate \
 		Task.h \
 		AddTaskDialog.h \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QDialog \
@@ -1610,9 +1626,6 @@ main.o: main.cpp ../../../Software/Qt/5.2.0/clang_64/lib/QtWidgets.framework/Ver
 		../../../Software/Qt/5.2.0/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QPushButton \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QGridLayout \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QHBoxLayout \
-		QNotify.h \
-		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/QPropertyAnimation \
-		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/qpropertyanimation.h \
 		TasksBrowser.h \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QTableWidget \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QTableWidgetItem
@@ -1733,6 +1746,13 @@ DesktopSprite.o: DesktopSprite.cpp DesktopSprite.h \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtGui.framework/Versions/5/Headers/QIcon \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/QTimer \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/qtimer.h \
+		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/QDateTime \
+		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/qdatetime.h \
+		../../../Software/Qt/5.2.0/clang_64/lib/QtMultimedia.framework/Versions/5/Headers/QSound \
+		../../../Software/Qt/5.2.0/clang_64/lib/QtMultimedia.framework/Versions/5/Headers/qsound.h \
+		QNotify.h \
+		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/QPropertyAnimation \
+		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/qpropertyanimation.h \
 		TaskRecorder.h \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QtWidgets \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qaccessiblewidget.h \
@@ -1871,8 +1891,7 @@ DesktopSprite.o: DesktopSprite.cpp DesktopSprite.h \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqlrelationaltablemodel.h \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqltablemodel.h \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtSql.framework/Versions/5/Headers/qtsqlversion.h \
-		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/QDateTime \
-		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/qdatetime.h \
+		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/QDate \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/QString \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/qstring.h \
 		Task.h \
@@ -1885,9 +1904,6 @@ DesktopSprite.o: DesktopSprite.cpp DesktopSprite.h \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QPushButton \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QGridLayout \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QHBoxLayout \
-		QNotify.h \
-		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/QPropertyAnimation \
-		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/qpropertyanimation.h \
 		TasksBrowser.h \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QTableWidget \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QTableWidgetItem
@@ -2132,8 +2148,9 @@ TaskRecorder.o: TaskRecorder.cpp TaskRecorder.h \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqlrelationaltablemodel.h \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqltablemodel.h \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtSql.framework/Versions/5/Headers/qtsqlversion.h \
-		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/QDateTime \
+		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/QDate \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/qdatetime.h \
+		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/QDateTime \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/QString \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/qstring.h \
 		Task.h
@@ -2393,6 +2410,7 @@ AddTaskDialog.o: AddTaskDialog.cpp AddTaskDialog.h \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqlrelationaltablemodel.h \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqltablemodel.h \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtSql.framework/Versions/5/Headers/qtsqlversion.h \
+		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/QDate \
 		Task.h \
 		QNotify.h \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QWidget \
@@ -2649,8 +2667,9 @@ TasksBrowser.o: TasksBrowser.cpp TasksBrowser.h \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqlrelationaltablemodel.h \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqltablemodel.h \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtSql.framework/Versions/5/Headers/qtsqlversion.h \
-		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/QDateTime \
+		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/QDate \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/qdatetime.h \
+		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/QDateTime \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/QString \
 		../../../Software/Qt/5.2.0/clang_64/lib/QtCore.framework/Versions/5/Headers/qstring.h \
 		Task.h \
