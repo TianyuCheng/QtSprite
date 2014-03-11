@@ -37,15 +37,16 @@
 #include <QTimer>
 
 QNotify::QNotify( QWidget *parent ) : QWidget( parent )
-{    
-    this->setWindowFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint | Qt::X11BypassWindowManagerHint | Qt::Tool);
+{
+    this->setWindowFlags(Qt::WindowStaysOnTopHint | Qt::X11BypassWindowManagerHint | Qt::Tool);
     QPixmapCache::insert( "success.png", QPixmap( ":/images/success.png" ).scaledToHeight( 80, Qt::SmoothTransformation ) );
     QPixmapCache::insert( "error.png", QPixmap( ":/images/error.png" ).scaledToHeight( 80, Qt::SmoothTransformation ) );
     QPixmapCache::insert( "warning.png", QPixmap( ":/images/warning.png" ).scaledToHeight( 80, Qt::SmoothTransformation ) );
     
     animation = new QPropertyAnimation( this, "geometry" );
-    connect( animation, SIGNAL(finished()), SLOT(onFinished()) );
+//    connect( animation, SIGNAL(finished()), SLOT(onFinished()) );
     
+    this->setStyleSheet("border-style: solid; border-width: 1px; border-color:black;");
     // defaults
     w = 300;
     x = qApp->desktop()->availableGeometry().width() - ( w + 50 );

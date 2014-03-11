@@ -4,6 +4,7 @@
 #include <QString>
 
 #include "DesktopSprite.h"
+#include "Configuration.h"
 
 /*
  * a launcher for the sprite program
@@ -11,20 +12,20 @@
 int main(int argc, char *argv[]) 
 {
     QApplication app(argc, argv);
+    app.setQuitOnLastWindowClosed(false);
 
+    // locale display
     QTextCodec *codec = QTextCodec::codecForName("UTF-8");
-  
     QTextCodec::setCodecForLocale(codec);  
-    //QTextCodec::setCodecForCStrings(codec);
-    //QTextCodec::setCodecForTr(codec);  
-
     QTranslator translator;
     translator.load("QtSprite_zh_CN");
     app.installTranslator(&translator);
 
-    DesktopSprite sprite(&app);
-    sprite.show();
+    // configuration
+    Configuration configs;
+    configs.init();
 
-    app.alert(&sprite);
+    DesktopSprite sprite(&app, &configs);
+    sprite.show();
     return app.exec();
 }

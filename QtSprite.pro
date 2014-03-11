@@ -16,5 +16,11 @@ macx {
 }
 
 # Input
-HEADERS += DesktopSprite.h TaskRecorder.h AddTaskDialog.h TasksBrowser.h Task.h QNotify.h
-SOURCES += main.cpp DesktopSprite.cpp TaskRecorder.cpp AddTaskDialog.cpp TasksBrowser.cpp Task.cpp QNotify.cpp
+HEADERS += DesktopSprite.h TaskRecorder.h AddTaskDialog.h TasksBrowser.h Task.h QNotify.h \
+    ScreenLocker.h \
+    Configuration.h \
+    TaskReminder.h
+SOURCES += main.cpp DesktopSprite.cpp TaskRecorder.cpp AddTaskDialog.cpp TasksBrowser.cpp Task.cpp QNotify.cpp \
+    ScreenLocker.cpp \
+    Configuration.cpp \
+    TaskReminder.cpp

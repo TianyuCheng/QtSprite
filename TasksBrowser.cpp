@@ -1,6 +1,6 @@
 #include "TasksBrowser.h"
 
-TasksBrowser::TasksBrowser(TaskRecorder *task,QWidget *parent): QDialog(parent), recorder(task)
+TasksBrowser::TasksBrowser(TaskRecorder *record, TaskReminder *remind, QWidget *parent): QDialog(parent), recorder(record), reminder(remind)
 {
     this->resize(QSize(700, 300));
     this->setWindowTitle(tr("Browsing Events"));
@@ -17,19 +17,15 @@ TasksBrowser::TasksBrowser(TaskRecorder *task,QWidget *parent): QDialog(parent),
     QObject::connect(button_delete, SIGNAL(clicked()), this, SLOT(button_delete_clicked()));
     QObject::connect(button_clear, SIGNAL(clicked()), this, SLOT(button_clear_clicked()));
     QObject::connect(button_add, SIGNAL(clicked()), this, SLOT(button_add_clicked()));
+    QObject::connect(button_close, SIGNAL(clicked()), this, SLOT(button_close_clicked()));
 }
 
 TasksBrowser::~TasksBrowser() 
 {
     this->clearItems();
 
-    table->deleteLater();
-
-    button_delete->deleteLater();
-    button_clear->deleteLater();
-    button_add->deleteLater();
-
-    hbox->deleteLater();
+    // delete all ui
+    // the parent takes care
     main_layout->deleteLater();
     
 }
@@ -47,17 +43,15 @@ void TasksBrowser::initWidgets()
     table->setColumnCount(3);
 
     QStringList header;
-    header << tr("ID") << tr("Date & Time") << tr("Description");
+    header << QWidget::tr("ID") << QWidget::tr("Datetime") << QWidget::tr("Description");
     table->setHorizontalHeaderLabels(header);
 
-//    table->horizontalHeader()->setDefaultSectionSize(150);
-    table->horizontalHeader()->setStretchLastSection(true);
+    table->setColumnWidth(0, 50);
+    table->setColumnWidth(1, 250);
 
+    table->horizontalHeader()->setStretchLastSection(true);
     table->horizontalHeader()->sectionResizeMode(QHeaderView::Stretch);
     table->verticalHeader()->sectionResizeMode(QHeaderView::ResizeToContents);
-
-//    table->horizontalHeader()->setResizeMode(QHeaderView::Stretch);
-//    table->verticalHeader()->setResizeMode(QHeaderView::ResizeToContents);
 
     table->verticalHeader()->setDefaultSectionSize(20);
 
@@ -83,14 +77,16 @@ void TasksBrowser::initWidgets()
       "QScrollBar::sub-line{background:transparent;}"
       "QScrollBar::add-line{background:transparent;}");
 
-    button_add = new QPushButton(tr("Add a Task"));
-    button_delete = new QPushButton(tr("Delete"));
-    button_clear = new QPushButton(tr("Clear"));
+    button_add = new QPushButton(QWidget::tr("Add a Task"));
+    button_delete = new QPushButton(QWidget::tr("Delete"));
+    button_clear = new QPushButton(QWidget::tr("Clear"));
+    button_close = new QPushButton(QWidget::tr("Close"));
 
     hbox = new QHBoxLayout;
     hbox->addWidget(button_add);
     hbox->addWidget(button_clear);
     hbox->addWidget(button_delete);
+    hbox->addWidget(button_close);
 
     main_layout = new QGridLayout(this);
     main_layout->addWidget(table, 0, 0);
@@ -119,7 +115,7 @@ void TasksBrowser::loadData()
 
 void TasksBrowser::clearItems()
 {
-    while(table->rowCount())
+    while(table->rowCount() > 0)
     {
         table->removeRow(0);
     }
@@ -132,28 +128,31 @@ void TasksBrowser::clearItems()
 void TasksBrowser::button_delete_clicked() 
 {
     int row = table->currentRow();
-    QTableWidgetItem *idItem = table->itemAt(row, 0);
-    QVariant id = idItem->data(Qt::EditRole);
-    recorder->removeTask(id.toInt());
+    qDebug() << "try to delete row " << row;
+    if (row >= 0) {
+        QTableWidgetItem *idItem = table->itemAt(row, 0);
+        QVariant id = idItem->data(Qt::EditRole);
+        recorder->removeTask(id.toInt());
 
-    table->removeRow(row);
-
-    QNotify notification(0);
-//    notification.notify(QString(tr("The task has been cleared")), QNotify::SUCCESS, 1000);
+        table->removeRow(row);
+    }
 }
 
 void TasksBrowser::button_clear_clicked()
 {
     recorder->removeAll();
     this->clearItems();
-
-//    notification.notify(QString(tr("All tasks have been cleared")), QNotify::SUCCESS, 1000);
 }
 
 void TasksBrowser::button_add_clicked()
 {
-    AddTaskDialog dialog(recorder, this);
+    AddTaskDialog dialog(recorder, reminder, this);
     dialog.exec();
 
     this->loadData();
+}
+
+void TasksBrowser::button_close_clicked()
+{
+    this->close();
 }

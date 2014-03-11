@@ -19,13 +19,14 @@
 #include <QDateTime>
 
 #include "TaskRecorder.h"
+#include "TaskReminder.h"
 #include "QNotify.h"
 
 class AddTaskDialog : public QDialog
 {
     Q_OBJECT
 public:
-    AddTaskDialog(TaskRecorder *recorder, QWidget *parent = 0);
+    AddTaskDialog(TaskRecorder *recorder, TaskReminder *reminder, QWidget *parent = 0);
     virtual ~AddTaskDialog();
 
     void initWidgets();
@@ -36,6 +37,7 @@ public slots:
 private:
     // data
     TaskRecorder *recorder;
+    TaskReminder *reminder;
 
     // ui
     QLabel *label_title;
@@ -52,11 +54,8 @@ private:
     QGridLayout *main_layout;
     QGridLayout *grid_layout;
     QHBoxLayout *hbox_layout;
-
-    QNotify notification;
 };
 
 
 
 #endif /* end of include guard: ADD_TASK_DIALOG_H */
-

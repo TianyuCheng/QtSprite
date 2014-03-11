@@ -1,76 +1,39 @@
 #include "DesktopSprite.h"
 
-DesktopSprite::DesktopSprite(QApplication *app) : QWidget(0), app_handle(app), pressed(false)
+DesktopSprite::DesktopSprite(QApplication *app, Configuration *conf) : QWidget(0),app_handle(app), configs(conf), pressed(false)
 {
-    // load icon and set the icon for the application
-    QIcon icon(":/images/gift.png");
-    this->setWindowIcon(icon);
+    qDebug() << "greetings:" << configs->greeting();
+    qDebug() << "muted:" << configs->isMuted();
+    qDebug() << "database:" << configs->getDatabaseName();
+    qDebug() << "interval:" << configs->getInterval();
 
-    // init actions
-    exit_all = new QAction(this);
-    add_task = new QAction(this);
-    browse_tasks = new QAction(this);
+    // load image and set up the window
+    this->initDisplay();
 
-    // set texts
-    exit_all->setText(QWidget::tr("Exit"));
-    add_task->setText(QWidget::tr("Add a Task"));
-    browse_tasks->setText(QWidget::tr("Browser Tasks"));
+    // init menu items and set popup menu policy
+    this->initMenuItems();
+    this->initMenu();
 
-    // connect the action with functions
-    QObject::connect(exit_all, SIGNAL(triggered()), app_handle, SLOT(quit()));
-    QObject::connect(add_task, SIGNAL(triggered()), this, SLOT(addTask()));
-    QObject::connect(browse_tasks, SIGNAL(triggered()), this, SLOT(browseTasks()));
+    // system tray
+    this->initSystemTray();
 
-    // initialize the settings and load the image
-    this->setContextMenuPolicy(Qt::CustomContextMenu);      // enable the right click menu
-    this->setFocusPolicy(Qt::ClickFocus);
-    
-    // set the right click menu
-    QObject::connect(this, SIGNAL(customContextMenuRequested(const QPoint&)), this, SLOT(showMouseRightButtonMenu(const QPoint&)));
+    // screen locker timer init
+    this->initScreenLocker();
 
-    // load the image to display
-    image.load(":/images/yui.png");
+    recorder = new TaskRecorder();
+    reminder = new TaskReminder(configs, recorder, this);
 
-    // remove window borders and set always on top
-    this->setWindowFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint | Qt::X11BypassWindowManagerHint | Qt::Tool);
-    this->setAttribute(Qt::WA_TranslucentBackground);
-
-    // move the window to the right-bottom position
-    QSize displaySize = QApplication::desktop()->screenGeometry(this).size();
-    
-    this->setFixedSize(image.size());
-    this->setMask(image.mask());
-
-    QSize size = displaySize - this->size();
-    this->move(QPoint(size.width(), size.height()));
-
-    // init system tray
-    initMenu();
-    tray = new QSystemTrayIcon(this);
-    tray->setContextMenu(qMenu);
-    tray->setIcon(icon);
-    tray->setToolTip(QString("QtSprite"));
-
-    connect(tray, SIGNAL(activated(QSystemTrayIcon::ActivationReason)), this, SLOT(iconActivated(QSystemTrayIcon::ActivationReason)));
-    tray->show();
-
-    // init the timer
-    timer = new QTimer(this);
-    QObject::connect(timer, SIGNAL(timeout()), this, SLOT(alarm()));
-
-    recorder = new TaskRecorder;
-
-    this->initTaskSchedule();
-
-    this->notify = new QNotify(this);
-    this->alertSound = new QSound(":/sound/alarmecho.wav");
+    // display the user define greetings
+    notify = new QNotify(this);
+    notify->notify(configs->greeting(), QNotify::SUCCESS);
 }
 
 DesktopSprite::~DesktopSprite()
 {
     // delete the pointers
-    timer->deleteLater();
+    idle->deleteLater();
     tray->deleteLater();
+    notify->deleteLater();
 
     // delete actions 
     exit_all->deleteLater();
@@ -79,13 +42,12 @@ DesktopSprite::~DesktopSprite()
 
     qMenu->deleteLater();
 
-    delete notify;
     delete recorder;
-    delete alertSound;
+    delete reminder;
 
-    notify = 0;
     recorder = 0;
-    alertSound = 0;
+    reminder = 0;
+    notify = 0;
 }
 
 void DesktopSprite::paintEvent(QPaintEvent *)
@@ -122,29 +84,71 @@ void DesktopSprite::iconActivated(QSystemTrayIcon::ActivationReason reason)
 
 void DesktopSprite::addTask()
 {
-    AddTaskDialog dialog(recorder, this);
+    AddTaskDialog dialog(recorder, reminder, this);
     dialog.exec();
 }
 
 void DesktopSprite::browseTasks()
 {
-    TasksBrowser dialog(recorder, this);
+    TasksBrowser dialog(recorder, reminder, this);
     dialog.exec();
 }
 
-void DesktopSprite::alarm() {
-    recorder->removeTask(currentTask->id);
-    this->tasksForToday.erase(this->tasksForToday.begin());
+void DesktopSprite::lockscreen() {
+    ScreenLocker locker(0);
+    locker.setCountdown(300);
+    locker.exec();
 
-    qDebug() << "alarm:" << currentTask->description;
-    this->alertSound->play();
-    this->notify->notify(currentTask->description, QNotify::SUCCESS, 3000);
-    handleTask();
+    // update the database after lockscreen
+    reminder->updateTasks();
 }
 
 /***************************************************************************
  *                           auxillary functions                           *
  ***************************************************************************/
+void DesktopSprite::initDisplay()
+{
+    // load the image to display
+    image.load(":/images/yui.png");
+
+    // remove window borders and set always on top
+    this->setWindowFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint | Qt::X11BypassWindowManagerHint | Qt::Tool);
+    this->setAttribute(Qt::WA_TranslucentBackground);
+
+    // move the window to the right-bottom position
+    QSize displaySize = QApplication::desktop()->screenGeometry(this).size();
+
+    this->setFixedSize(image.size());
+    this->setMask(image.mask());
+
+    QSize size = displaySize - this->size();
+    this->move(QPoint(size.width(), size.height()));
+}
+
+void DesktopSprite::initMenuItems()
+{
+    // init actions
+    exit_all = new QAction(this);
+    add_task = new QAction(this);
+    browse_tasks = new QAction(this);
+
+    // set texts
+    exit_all->setText(QWidget::tr("Exit Program"));
+    add_task->setText(QWidget::tr("Add a Task"));
+    browse_tasks->setText(QWidget::tr("Browse All Tasks"));
+
+    // connect the action with functions
+    QObject::connect(exit_all, SIGNAL(triggered()), app_handle, SLOT(quit()));
+    QObject::connect(add_task, SIGNAL(triggered()), this, SLOT(addTask()));
+    QObject::connect(browse_tasks, SIGNAL(triggered()), this, SLOT(browseTasks()));
+
+    // initialize the settings and load the image
+    this->setContextMenuPolicy(Qt::CustomContextMenu);      // enable the right click menu
+    this->setFocusPolicy(Qt::ClickFocus);
+
+    // set the right click menu
+    QObject::connect(this, SIGNAL(customContextMenuRequested(const QPoint&)), this, SLOT(showMouseRightButtonMenu(const QPoint&)));
+}
 
 void DesktopSprite::initMenu()
 {
@@ -155,46 +159,32 @@ void DesktopSprite::initMenu()
     qMenu->addAction(exit_all);
 }
 
-void DesktopSprite::initTaskSchedule()
+void DesktopSprite::initSystemTray()
 {
-    recorder->updateDB();
+    // load icon and set the icon for the application
+    QIcon icon(":/images/gift.png");
+    this->setWindowIcon(icon);
 
-    QDateTime datetime = QDateTime::currentDateTime();
-    this->tasksForToday = recorder->getTasksByDate(datetime);     // already sorted
+    // init system tray
+    tray = new QSystemTrayIcon(this);
+    tray->setContextMenu(qMenu);
+    tray->setIcon(icon);
+    tray->setToolTip(QString("QtSprite"));
 
-    while (this->tasksForToday.size() > 0)
-    {
-        currentTask = tasksForToday.front();
-        long time = currentTask->datetime.toMSecsSinceEpoch() - datetime.toMSecsSinceEpoch();
-
-        if (time < 0) {
-            recorder->removeTask(currentTask->id);
-            this->tasksForToday.erase(this->tasksForToday.begin());
-        }
-        else
-            break;
-        qDebug() << time;
-    }
-
-    this->handleTask();
+    connect(tray, SIGNAL(activated(QSystemTrayIcon::ActivationReason)), this, SLOT(iconActivated(QSystemTrayIcon::ActivationReason)));
+    tray->show();
 }
 
-void DesktopSprite::handleTask()
+void DesktopSprite::initScreenLocker()
 {
-    timer->stop();
-
-    if (this->tasksForToday.size() > 0)
-    {
-        QDateTime datetime = QDateTime::currentDateTime();
-
-        currentTask = tasksForToday.front();
-        long time = currentTask->datetime.toMSecsSinceEpoch() - datetime.toMSecsSinceEpoch();
-        qDebug() << "Time to next alarm: " << time;
-
-        timer->start(time);
-    }
+    // init the idle timer
+    idle = new QTimer(this);
+    idle->setInterval(configs->getInterval());
+    idle->start();
+    QObject::connect(idle, SIGNAL(timeout()), this, SLOT(lockscreen()));
 }
 
+// ======================  drag and drop gui implementation ========================
 // sprite dragging functions
 void DesktopSprite::mouseMoveEvent(QMouseEvent * event)
 {

@@ -16,28 +16,32 @@
 #include <QIcon>
 #include <QTimer>
 #include <QDateTime>
-#include <QSound>
 
 #include <iostream>
 #include <vector>
 
-#include "QNotify.h"
+// define beforehand
+class DesktopSprite;
+class TaskReminder;
 
+#include "QNotify.h"
+#include "Configuration.h"
 #include "TaskRecorder.h"
 #include "AddTaskDialog.h"
 #include "TasksBrowser.h"
+#include "ScreenLocker.h"
+#include "TaskReminder.h"
 
 class DesktopSprite : public QWidget
 {
     Q_OBJECT
 
     public:
-        DesktopSprite(QApplication *app);
+        DesktopSprite(QApplication *app, Configuration *config);
         virtual ~DesktopSprite();
 
         // paint function
         void paintEvent(QPaintEvent *event);
-
     protected:
         void mouseMoveEvent(QMouseEvent * event);
         void mousePressEvent(QMouseEvent * event);
@@ -46,8 +50,10 @@ class DesktopSprite : public QWidget
 
     private:
         void initMenu();
-        void initTaskSchedule();
-        void handleTask();
+        void initMenuItems();
+        void initDisplay();
+        void initSystemTray();
+        void initScreenLocker();
 
     public slots:
         void showMouseRightButtonMenu(const QPoint&);
@@ -55,28 +61,30 @@ class DesktopSprite : public QWidget
 
         void addTask();
         void browseTasks();
-        void alarm();
+        void lockscreen();
     private:
+        QApplication *app_handle;
+        Configuration *configs;
+
         QMenu *qMenu;
         QPixmap image; 
-        QApplication *app_handle;
+        QSystemTrayIcon *tray;
 
-        // menu actions
+        // pop menu actions
         QAction *exit_all;
         QAction *add_task;
         QAction *browse_tasks;
 
+        // for drag and drop
         QPoint prevPt;
         bool pressed;
-        std::vector<Task*> tasksForToday;
-        Task * currentTask ;
 
-        QTimer *timer;
-        QSystemTrayIcon *tray;
-
-        QNotify *notify;
         TaskRecorder *recorder;
-        QSound * alertSound;
-};
+        TaskReminder *reminder;
 
+        // manage screen locker
+        QTimer *idle;
+        QNotify *notify;
+
+};
  #endif /* end of include guard: DESKTOP_SPRITE */

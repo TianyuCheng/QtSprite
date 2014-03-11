@@ -1,9 +1,9 @@
 #include "AddTaskDialog.h"
 
-AddTaskDialog::AddTaskDialog(TaskRecorder *task,QWidget *parent): QDialog(parent), recorder(task)
+AddTaskDialog::AddTaskDialog(TaskRecorder *record, TaskReminder *remind, QWidget *parent): QDialog(parent), recorder(record), reminder(remind)
 {
     this->resize(QSize(400, 300));
-    this->setWindowTitle(tr("Add an Event"));
+    this->setWindowTitle(QWidget::tr("Add a Task"));
     
     // move the window to the center of the screen 
     QSize displaySize = QApplication::desktop()->screenGeometry(this).size();
@@ -25,34 +25,23 @@ AddTaskDialog::AddTaskDialog(TaskRecorder *task,QWidget *parent): QDialog(parent
 AddTaskDialog::~AddTaskDialog()
 {
     // delete all pointers for ui
-    label_time->deleteLater();
-    label_date->deleteLater();
-    label_title->deleteLater();
-
-    content->deleteLater();
-    date->deleteLater();
-    time->deleteLater();
-
-    button_okay->deleteLater();
-    button_cancel->deleteLater();
-
-    grid_layout->deleteLater();
-    hbox_layout->deleteLater();
+    // acutually Qt takes care of that
+    // all the children items will be taken care of the parent
     main_layout->deleteLater();
 }
 
 void AddTaskDialog::initWidgets()
 {
-    label_title = new QLabel(tr("Event Description"));
-    label_date = new QLabel(tr("Date"));
-    label_time = new QLabel(tr("Time"));
+    label_title = new QLabel(QWidget::tr("Event Description"));
+    label_date  = new QLabel(QWidget::tr("Date"));
+    label_time  = new QLabel(QWidget::tr("Time"));
 
     content = new QTextEdit;
     date = new QCalendarWidget;
     time = new QDateTimeEdit;
 
-    button_okay = new QPushButton(tr("OK"));
-    button_cancel = new QPushButton(tr("Cancel"));
+    button_okay = new QPushButton(QWidget::tr("OK"));
+    button_cancel = new QPushButton(QWidget::tr("Cancel"));
 
     grid_layout = new QGridLayout;
     grid_layout->addWidget(label_title, 0, 0);
@@ -81,16 +70,25 @@ void AddTaskDialog::button_okay_clicked()
     QString event = content->toPlainText();
     QDateTime time_stamp = time->dateTime();
 
-    if(!event.isEmpty()) 
+    QDateTime now = QDateTime::currentDateTime();
+    long time = time_stamp.toMSecsSinceEpoch() - now.toMSecsSinceEpoch();
+
+    if (time <= 0)
+    {
+        QMessageBox::warning(this, QWidget::tr("Task Manager"), QWidget::tr("The datetime you entered is in the past!"));
+        return;
+    }
+
+    if(!event.isEmpty())
     {
         qDebug() << event << time_stamp;
         recorder->addNewTask(event, time_stamp);
         close();
 
-//        notification.notify(QString(tr("The task has been added")), QNotify::SUCCESS, 1000);
+        reminder->updateTasks();
     }
     else
     {
-        QMessageBox::warning(this, QObject::tr("Task Manager"), QObject::tr("Please enter the event description!"));
+        QMessageBox::warning(this, QWidget::tr("Task Manager"), QWidget::tr("Please enter the event description!"));
     }
 }
