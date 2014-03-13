@@ -22,3 +22,7 @@
 
 # database
 *.sqlite
+
+.DS_STORE
+.qmake.stash
+*.user.*
