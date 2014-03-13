@@ -24,5 +24,7 @@
 *.sqlite
 
 .DS_STORE
+.DS_Store
+.ds_store
 .qmake.stash
 *.user.*
